@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire</title>
+  <style>
+  *{  
+    margin:0;
+    padding:0;
+  }
+  
+  h1 {
+    font-size: 2em;
+    font-family: "Core Sans N W01 35 Light";
+    font-weight: normal;
+    margin: .67em 0;
+    display: block;
+  }
+  
+  #registered {
+      margin-top: 50px;
+  }
+  
+  #registered img {
+      margin-bottom: 0px;
+      width: 100px;
+      height: 100px;
+  }
+  
+  #registered span {
+      clear: both;
+      display: block;
+  }
+  
+  img {
+      margin-bottom: 20px;
+  }
+  
+  .avatar {
+      margin: 10px 0 20px 0;
+  }
+  
+  .module{
+    position:relative;
+    top:10%;    
+    height:65%;
+    width:450px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  
+  .user {
+      color: #66d8fc;
+      font-weight: bold;
+  }
+  
+  .userlist {
+      float:left;
+      padding: 30px;
+  }
+  
+  .userlist span {
+      color: #0590fc;
+  }
+  
+  .welcome{
+    position:relative;
+    top:30%;    
+    height:65%;
+    width:900px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 50px;
+  }
+  
+  ::-moz-selection {
+    background: #19547c;
+  }
+  ::selection {
+    background: #19547c;
+  }
+  input::-moz-selection {
+    background: #037db6;
+  }
+  input::selection {
+    background: #037db6;
+  }
+  
+  body {
+    background-image: url('style/fond.png'); /* Remplacez 'chemin/vers/votre/image.jpg' par le chemin de votre image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Pour que l'image reste fixe lors du défilement */
+    background-position: center center;
+    background-color: rgba(255, 255, 255, 0); /* Réglez l'opacité ici (0 = transparent, 1 = opaque) */
+    color: white;
+}
+  
+  .body-content{
+    position:relative;
+    top:20px;
+    height:700px;
+    width:800px;
+    margin-left:auto;
+    margin-right:auto; 
+    background: transparent;
+  }
+  
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="cout"],
+  input[type="email"],
+  input[type="date"]
+  {
+    height:30px;
+    width:100%;;
+    display: inline-block;
+    vertical-align: middle;
+    height: 34px;
+    padding: 0 10px;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.7);
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 2px;
+  }
+  
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="cout"],
+  input[type="email"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -webkit-transition: background-position 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    transition: background-position 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  }
+  select:hover,
+  textarea:hover,
+  input[type="text"]:hover,
+  input[type="password"]:hover,
+  input[type="cout"]:hover,
+  input[type="email"]:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.7);
+  }
+  select:focus,
+  textarea:focus,
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="cout"]:focus,
+  input[type="email"]:focus {
+    border: 2px solid;
+    border-color: #1e5f99;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+  }
+  .btn {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 3px 0;
+    padding: 6px 20px;
+    font-size: 15px;
+    line-height: 20px;
+    height: 34px;
+    background-color: rgba(0, 0, 0, 0.15);
+    color: #00aeff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 rgba(0, 0, 0, 0);
+    border-radius: 2px;
+    -webkit-transition: background-color 0.2s, box-shadow 0.2s, background-color 0.2s, border-color 0.2s, color 0.2s;
+    transition: background-color 0.2s, box-shadow 0.2s, background-color 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .btn.active,
+  .btn:active {
+    padding: 7px 19px 5px 21px;
+  }
+  .btn.disabled:active,
+  .btn[disabled]:active,
+  .btn.disabled.active,
+  .btn[disabled].active {
+    padding: 6px 20px !important;
+  }
+  .btn:hover,
+  .btn:focus {
+    background-color: rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 rgba(0, 0, 0, 0);
+  }
+  .btn:active,
+  .btn.active {
+    background-color: rgba(0, 0, 0, 0.15);
+    color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.07);
+    box-shadow: inset 1.5px 1.5px 3px rgba(0, 0, 0, 0.5);
+  }
+  .btn-primary {
+    background-color: #098cc8;
+    color: #ffffff;
+    border: 1px solid transparent;
+    box-shadow: 0 0 rgba(0, 0, 0, 0);
+    border-radius: 2px;
+    -webkit-transition: background-color 0.2s, box-shadow 0.2s, background-color 0.2s, border-color 0.2s, color 0.2s;
+    transition: background-color 0.2s, box-shadow 0.2s, background-color 0.2s, border-color 0.2s, color 0.2s;
+    background-image: -webkit-linear-gradient(top, #0f9ada, #0076ad);
+    background-image: linear-gradient(to bottom, #0f9ada, #0076ad);
+    border: 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: #21b0f1;
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 0 rgba(0, 0, 0, 0);
+  }
+  .btn-primary:active,
+  .btn-primary.active {
+    background-color: #006899;
+    color: rgba(255, 255, 255, 0.7);
+    border-color: transparent;
+    box-shadow: inset 1.5px 1.5px 3px rgba(0, 0, 0, 0.5);
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-image: -webkit-linear-gradient(top, #37c0ff, #0097dd);
+    background-image: linear-gradient(to bottom, #37c0ff, #0097dd);
+  }
+  .btn-primary:active,
+  .btn-primary.active {
+    background-image: -webkit-linear-gradient(top, #006ea1, #00608d);
+    background-image: linear-gradient(to bottom, #006ea1, #00608d);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6) inset, 0 0 0 1px rgba(255, 255, 255, 0.07) inset;
+  }
+  .btn-block {
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .alert {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 4px 20px 4px 20px;
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom: 20px;
+    text-shadow: none;
+    position: relative;
+    background-color: #272e3b;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #000;
+    box-shadow: 0 0 0 1px #363d49 inset, 0 5px 10px rgba(0, 0, 0, 0.75);
+  }
+  .alert-error {
+    color: #f00;
+    background-color: #360e10;
+    box-shadow: 0 0 0 1px #551e21 inset, 0 5px 10px rgba(0, 0, 0, 0.75);
+  }
+  .alert:empty{
+      display: none;
+  }
+  .alert-success {
+    color: #21ec0c;
+    background-color: #15360e;
+    box-shadow: 0 0 0 1px #2a551e inset, 0 5px 10px rgba(0, 0, 0, 0.75);
+  }
+
+
+
+/* styles.css */
+
+/* Définition de la grille */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Trois colonnes, la première et la dernière occupe 1 fraction de l'espace disponible, la seconde 2 fractions */
+    gap: 10px; /* Espacement entre les éléments */
+  }
+  
+  /* Styles pour les labels */
+  label {
+    display: inline-block;
+    text-align: left;
+    margin-right: 20px; /* Espacement entre le label et le champ */
+    max-width: 50%; /* Limite la largeur à 50% de la largeur de la page */
+  }
+
+  label[for="cot"] {
+    display: inline-block;
+    text-align: left;
+    margin-right: 10px; /* Espacement entre le label et le champ */
+    max-width: 50%; /* Limite la largeur à 50% de la largeur de la page */
+  }
+  
+  
+  /* Styles pour les champs de saisie */
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  select{
+    width: 15%; /* Utilise tout l'espace disponible dans la deuxième colonne */
+    padding: 5px;
+    border: 3px solid #0a0505;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+
+  input[type="cout"]
+  {
+    width: 3%; /* Utilise tout l'espace disponible dans la deuxième colonne */
+    padding: 5px;
+    border: 3px solid #0a0505;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+
+
+  textarea {
+    width: 50%; /* Utilise tout l'espace disponible dans la deuxième colonne */
+    height:50%;
+    padding: 5px;
+    border: 3px solid #070505;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+  
+  /* Style pour les boutons */
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style pour l'image */
+  .container {
+    display: flex;
+    align-items: flex-start; /* Aligne le contenu en haut */
+  }
+  .img-container {
+    grid-column: 2; /* Occupe la troisième colonne */
+    display: flex;
+    justify-content: flex-start; /* Aligner l'image à droite */
+    align-items: center; /* Centrer l'image verticalement */
+    position: absolute;
+    top: 0px; /* Décalage de l'image vers le bas */
+    right: 0px; /* Décalage de l'image vers la droite */
+
+  }
+  
+  .img-container img {
+    width: 800px; /* Taille de l'image en pourcentage de la largeur du conteneur */
+    max-width: 400px; /* Largeur maximale de l'image */
+    border-radius: 8px; /* Assurer que l'image est un peu arrondie */
+    margin-left: 10px; /* Espacement entre l'image et les autres éléments */
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+  </style>
+</head>
+<body>
+  <h1>Formulaire de retour d'expérience</h1>
+  <form action="/submit" method="post">
+    <label for="name">Nom:</label>
+    <input type="text" id="name" name="name"><
+    <label for="firstname">  Prénom:</label>
+    <input type="text" id="firstname" name="firstname"> <br><br>
+    <Label for="departement">Département:</label>
+    <select id="departement" name="departement">
+        <option value="SN-L">SN-L</option>
+        <option value="SN-B">SN-B</option>
+        <option value="SN-M">SN-M</option>
+        <option value="SN-T">SN-T</option>
+        <option value="SN-R">SN-R</option>
+        <option value="SN-A">SN-A</option>
+        <option value="MF2E">MF2E</option>
+        <option value="MF2E Eau et Environnement">MF2E Eau et Environnement</option>
+        <option value="MF2E Energie-FEP">MF2E Energie</option>
+        <option value="3EA Electronique">3EA Electronique (s7)</option>
+        <option value="3EA electrique et simulation">3EA electrique et simulation (s7)</option>
+        <option value="3EA energie">3EA energie (s7)</option>
+        <option value="3EA InSyst">3EA InSyst (s8)</option>
+        <option value="3EA SysCom">3EA SysCom (s8)</option>
+        <option value="3EA ON">3EA PN (s8)</option>
+        <option value="3EA IATI">3EA IATI (s8)</option>
+        <option value="3EA SATR">3EA SATR (s8)</option>
+        <option value="3EA SEF">3EA SEF (s8)</option>
+        <option value="3EA SM">3EA SM (s8)</option>
+    </select>
+    <label for="pays">   Pays destination</label>
+    <select id="pays" name="pays">
+      <option value="royaumeUni">Royaume-Uni</option>
+      <option value="canada">Canada</option>
+      <option value="tunisie">Tunisie</option>
+      <option value="maroc">Maroc</option>
+      <option value="espagne">Espagne</option>
+      <option value="argentine">Argentine</option>
+      <option value="colombie">Colombie</option>
+      <option value="cameroun">Cameroun</option>
+      <option value="cambodge">Cambodge</option>
+      <option value="bresil">Brésil</option>
+      <option value="vietNam">Viet Nam</option>
+      <option value="suisse">Suisse</option>
+      <option value="chine">Chine</option>
+      <option value="japon">Japon</option>
+      <option value="taiwan">Taïwan</option>
+      <option value="russie">Fédération de Russie</option>
+      <option value="dominicaineRépublique">République Dominicaine</option>
+      <option value="equateur">Équateur</option>
+      <option value="liban">Liban</option>
+      <option value="australie">Australie</option>
+      <option value="allemagne">Allemagne</option>
+      <option value="irlande">Irlande</option>
+      <option value="autriche">Autriche</option>
+      <option value="belgique">Belgique</option>
+      <option value="italie">Italie</option>
+      <option value="pologne">Pologne</option>
+      <option value="suede">Suède</option>
+      <option value="norvege">Norvège</option>
+      <option value="grece">Grèce</option>
+      <option value="etatsUnis">États-Unis</option>
+      <option value="paysBas">Pays-Bas</option>
+      <option value="thailande">Thaïlande</option>
+      <option value="inde">Inde</option>
+      <option value="indonesie">Indonésie</option>
+      <option value="coréeRepublique">République de Corée</option>
+      <option value="ghana">Ghana</option>
+      <option value="mexique">Mexique</option>
+      <option value="malaisie">Malaisie</option>
+      <option value="serbie">Serbie</option>
+      <option value="france">France</option>
+    </select><br><br>
+    <label for="university">Université:</label>
+    <select id="university" name="university">
+        <!-- Les options des universités seront ajoutées dynamiquement ici -->
+    </select>
+    <label for="filiere">Filière:</label>
+    <input type="text" id="filiere" name="filiere"><br><br>
+    <Label for="semestre">Semestre:</label>
+    <select id="semestre" name="semestre">
+        <option value="s7">S7</option>
+        <option value="s8">S8</option>
+        <option value="s9">S9</option>
+    </select>
+    <label for="date">Dates de la mobilité :</label>
+    <input type="date" id="date" name="date"> <br><br>
+    <Label for="cadre">Cadre:</label>
+    <select id="cadre" name="cadre">
+        <option value="erasmus">Erasmus</option>
+        <option value="echange">Echange</option>
+        <option value="double-diplome">Double-diplôme</option>
+    </select> 
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br><br><br>
+    <label for="langue">Langue d'enseignement:</label><br>
+    <select id="langue" name="langue">
+        <option value="anglais">Anglais</option>
+        <option value="espagnol">Français</option>
+        <option value="autre">Autre</option>
+    </select><br><br>
+    <label for="message">Quelles sont les exigences linguistiques (le niveau de langue requis pour les cours...) et les dates approximatives des examens de fin ?</label><br>
+    <textarea type="exigences" name="message"  rows="5" cols="50"></textarea><br><br>
+    <label for="message">Quelle est la moyenne requise pour réussir en une ou deux sessions, et quand se déroule la session de rattrapage ?</label><br>
+    <textarea type="moyenne" name="message"  rows="5" cols="50"></textarea><br><br>
+    <label for="message">Comment est la qualité de l'accueil et quelle est l'aide fournie par l'établissement étranger ?</label><br>
+    <textarea type="accueil" name="message"  rows="5" cols="50"></textarea><br><br>
+    <label for="message">Quelles sont les difficultés rencontrées à votre arrivée et quelles sont les ressources les plus utiles pour votre orientation
+        (les centres d'information touristique, les cartes de transport en commun et le personnel des bureaux internationaux etc ...)</label><br>
+    <textarea type="difficultes" name="message"  rows="5" cols="50"></textarea><br><br>
+    <label for="message">décrire vos cours et expliquer comment vous les avez choisis(écrivez à côté du chaque cours : code et crédit). </label><br>
+    <textarea type="vie" name="message"  rows="5" cols="50"></textarea><br><br>
+    <label for="message">Quel sont vos conseils concernat le choix des cours</label><br>
+    <textarea type="conseils cours" name="message"  rows="5" cols="50"></textarea><br><br>
+    <label for="message">Quels étaient les aspects les plus intéressants ou surprenants de votre programme académique ? </label><br>
+    <textarea type="comparaison" name="message"  rows="5" cols="50"></textarea><br><br>
+    <label for="message">Y avait-il des différences notables dans les méthodes d'enseignement ou dans le contenu des cours par rapport à l'ENSEEIHT ? </label><br>
+    <textarea type="difference" name="message"  rows="5" cols="50"></textarea><br><br>
+    <label for="message">Coût de la vie. </label><br><br>
+    <label for="message">Logement</label>
+    <input type="cout" id="logement" name="logement">
+    <label for="message">Nourriture</label>
+    <input type="cout" id="nourriture" name="nourriture">
+    <label for="message">Transport</label>
+    <input type="cout" id="transport" name="transport">
+    <label for="message">Frais à l'université d'acceil</label>
+    <input type="cout" id="frais" name="frais"><br>
+    <label for="message">Assurance médicale complémentaire</label>
+    <input type="cout" id="assurance" name="assurance">
+    <label for="message">Autres</label>
+    <input type="cout" id="autres" name="autres"><br><br>
+    <label for="message">Quelles ressources ou services spécifiques avez-vous trouvés utiles sur le campus pour vous aider dans 
+      vos études et votre adaptation à la vie universitaire dans ce pays ? </label><br>
+    <textarea type="ressources" name="message"  rows="5" cols="50"></textarea><br><br>
+    <label for="message"> y a-t-il des conseils ou des informations importantes que vous souhaitez partager avec les étudiants qui envisagent de faire le même séjour à l'avenir ?</label><br>
+    <textarea type="message" name="message"  rows="10" cols="80"></textarea><br><br>
+    <button type="submit">Soumettre</button>
+  </form>
+</div>
+  <div class="img-container">
+    <img src="style/imageINP.jpeg" >
+  </div>
+
+  <script>
+  const paysSelect = document.getElementById('pays');
+  const universitySelect = document.getElementById('university');
+
+  const universitiesByCountry = {
+      royaumeUni: ["Cranfield University",  " Cranfield University " ,  " Manchester Metropolitan University " ,  " Coventry University " ,  " Imperial College London " ,  " University of Birmingham " ,  " The University of Manchester " ],
+      canada: ["École Polytechnique de Montréal",  " Faculté Agronomie - Université Laval, Faculté des sciences et génie - Université Laval, Université Laval " ,  " École de Technologie Supérieure (ETS) " ,  " University of Sherbrooke " ,  " University of Sherbrooke " ,  " University of Sherbrooke " ,  " University of Sherbrooke " ,  " Université du Québec à Chicoutimi " ,  " Université du Québec à Chicoutimi " ,  " Université du Québec à Chicoutimi " ,  " Université du Québec à Chicoutimi " ,  " Université du Québec à Chicoutimi " ,  " Faculté Agronomie - Université Laval, Faculté des sciences et génie - Université Laval, Université Laval " ,  " Université du Québec à Montréal " ,  " University of Sherbrooke " ,  " École Polytechnique de Montréal " ,  " École de Technologie Supérieure (ETS) " ,  " Université du Québec à Chicoutimi " ,  " Faculté Agronomie - Université Laval, Faculté des sciences et génie - Université Laval, Université Laval " ,  " Université du Québec à Trois-Rivières " ],
+      tunisie: ["Ecole Nationale d'Ingenieur de Tunis",  " Institut National des Sciences Appliquées et de Technologie, Université de Carthage " ,  " Institut National des Sciences Appliquées et de Technologie, Université de Carthage " ],
+      maroc: ["Ecole Nationale Supérieure d'Arts et Métiers (Mohammed V Rabat), Université Mohammed V Rabat",  " Ecole Hassania des Travaux Publics " ],
+      espagne: ["Universidad Politécnica de Madrid",  " Mondragon Unibertsitatea " ,  " Universidad Complutense de Madrid " ,  " Universidad de Deusto " ,  " Mondragon Unibertsitatea " ,  " Mondragon Unibertsitatea " ,  " Universidad Politécnica de Madrid " ,  " Universidad Politécnica de Madrid " ,  " Universidad Politécnica de Madrid " ,  " Universidad Politécnica de Madrid " ,  " Universitat Politècnica de València " ,  " Universidad Pública de Navarra " ,  " Universidad Miguel Hernandez de Elche " ,  " Universidad de Sevilla " ,  " Universitat de València " ,  " Universidad de Valladolid " ,  " Universidad de Vigo " ,  " Universidad de Zaragoza " ,  " Universidad de Zaragoza " ,  " Universidad de Zaragoza " ,  " Universidad del País Vasco / Euskal Herriko Unibertsitatea " ,  " Universidade da Coruña " ,  " Universitat Politècnica de Catalunya " ],
+      argentine: ["Departamento de Ingeniería Eléctrica y de Computadoras, Universidad Nacional del Sur",  " Facultad de Agronomia de la Universidad de Buenos Aires, Facultad de Ingeniería de la Universidad de Buenos Aires, Universidad de Buenos Aires " ,  " Facultad de Ciencias Exactas, Físicas y Naturales (FCEFyN), Universidad Nacional de Córdoba " ,  " Universidad Nacional de Rosario " ],
+      colombie: ["Escuela Colombiana de Ingeniería Julio Garavito",  " Pontificia Universidad Javeriana " ,  " Universidad de Los Andes " ,  " Universidad Nacional de Colombia " ,  " Universidad Antonio Nariño " ],
+      cameroun: ["Ecole Nationale Supérieure Polytechnique (Univ. Yaoundé I), Université de Yaoundé I"],
+      cambodge: ["Institut de Technologie du Cambodge",  " Ministry of Water Resources and Meteorology " ,  " National Institute of Posts, Telecoms & ICT " ],
+      brésil: ["Universidade Federal de Santa Catarina (UFSC)",  " Universidade Federal de Santa Catarina (UFSC) " ,  " Universidade Federal do Rio Grande do Norte " ,  " Universidade Federal do Rio de Janeiro (UFRJ) " ,  " Universidade Federal de Santa Catarina (UFSC) " ,  " Universidade Estadual Paulista 'Júlio de Mesquita Filho' (UNESP) " ],
+      vietNam: ["Institut Polytechnique de Ho Chi Minh Ville",  " University of Science and Technology of Hanoi " ,  " Institut Polytechnique de Ho Chi Minh Ville " ],
+      suisse: ["BFH Berner Fachhochschule",  " BFH Berner Fachhochschule " ,  " FHNW Fachhochschule Nordwestschweiz " ,  " FHNW Fachhochschule Nordwestschweiz " ,  " Université de Neuchâtel " ,  " École Polytechnique Fédérale (EPF) Lausanne " ],
+      chine: ["Huazhong University of Science and Technology",  " Sichuan University " ],
+      japon: ["Kobe University",  " Kyoto University of Advanced Science " ,  " Okayama University " ,  " Tohoku University " ,  " Tokyo City University " ,  " Kyoto University of Advanced Science " ,  " National Institute of Informatics " ],
+      taiwan: ["National Cheng Kung University",  " National Tsing Hua University " ,  " National Taiwan University " ],
+      dominicaineRépublique: ["Universidad APEC"],
+      equateur: ["Universidad de Cuenca",  " Universidad Politécnica Salesiana " ,  " Escuela Politécnica Nacional " ],
+      liban: ["Université Saint-Joseph"],
+      australie: ["University of Sydney"],
+      allemagne: ["Rheinisch-Westfälische Technische Hochschule Aachen",  " Hochschule Bremen " ,  " Technische Universität Berlin " ,  " Technische Universität Berlin " ,  " Technische Universität Berlin " ,  " Technische Universität Clausthal " ,  " Technische Universität Darmstadt " ,  " Technische Universität Hamburg-Harburg " ,  " Technische Universität München (TUM) " ,  " Technische Universität München (TUM) " ,  " Universität Bremen " ],
+      irlande: ["Dublin City University",  " Dublin City University " ,  " University College Cork " ],
+      autriche: ["Alpen-Adria-Universität Klagenfurt"],
+      belgique: ["KU Leuven",  " Hogeschool PXL " ,  " Université Libre de Bruxelles " ,  " Université de Liège " ,  " Université de Mons " ],
+      italie: ["Università degli Studi di Napoli Federico II",  " Università degli Studi di Napoli Federico II " ,  " Università degli Studi di Napoli Federico II " ,  " Università degli Studi di Napoli Federico II " ,  " Università degli Studi di Napoli Federico II " ,  " Università degli Studi di Napoli Federico II " ,  " Politecnico di Milano " ,  " Politecnico di Milano " ,  " Politecnico di Torino " ,  " Università degli studi di Cassino e del Lazio Meridionale " ,  " Università degli Studi di Firenze " ,  " Università degli Studi della Campania Luigi Vanvitelli " ,  " Università degli Studi di Padova " ,  " Università degli Studi di Pavia " ,  " Università degli Studi di Roma 'Tor Vergata' " ,  " Università degli Studi di Bologna 'Alma Mater Studiorum' " ,  " Università degli Studi di Roma 'La Sapienza' " ,  " Università degli Studi di Firenze " ],
+      pologne: ["Warsaw University of Technology",  " Warsaw University of Technology " ],
+      suède: ["Uppsala universitet",  " Chalmers tekniska högskola " ],
+      norvège: ["UiT Norges arktiske universitet",  " UiT Norges arktiske universitet " ],
+      grece: ["University of West Attica (ex-TEI Piraeus)"],
+      etatsUnis: ["Louisiana State University (LSU)",  " Michigan State University " ],
+      paysBas: ["Technische Universiteit Delft"],
+      thailande: ["Chulalongkorn University",  " King Mongkut's Institute of Technology Ladkrabang " ],
+      inde: ["Indian Institute of Technology Bombay (IIT Bombay)",  " Indian Institute of Technology Indore " ],
+      indonesie: ["Institut Teknologi Bandung",  " Institut Pertanian Bogor - Bogor Agricultural University " ,  " Universitas Brawijaya " ],
+      coréeRepublique : ["Korea University of Technology and Education"],
+      ghana: ["Takoradi Technical University"],
+      mexique: ["Universidad Autónoma de Guadalajara"],
+      malaisie: ["Universiti Malaya (UM)"],
+      serbie: ["University of Belgrade"],
+      france: ["EURECOM",  " Telecom Paris " ,  " Master X-HEC " ,  " ENSAE " ,  " ENSTA " ,  " INSTN Génie atomique " ,  " Master M-TECH-AMASONE de l'Ecole Centrale Nantes " ,  " Master Marine Sciences Parcours Physique océan et climat coaccréditée par l’IUEM à l’UBO et par l’ENSTA Bretagne " ,  " ENAC " ,  " IMT Mines Albi - filière ETN (Energie et Transition Numérique) " ,  " Master M2 Physique des Plasmas, Université Paris-Saclay (Paris-Sud) " ,  " ISAE " ,  " INSTN " ,  " SciencesPo Paris " ,  " TSM " ,  " TBS " ,  " IFP " ],
+      russie: ["Tomsk Polytechnic University",  " Saint Petersburg State Institute of Technology " ,  " Siberian State Aerospace University" ]
+      
+  };
+  
+  // Définir les options d'université en fonction du pays sélectionné
+  paysSelect.addEventListener('change', () => {
+      const pays = paysSelect.value;
+      universitySelect.innerHTML = '                        '; // Réinitialiser les options
+      
+      // Ajouter les options d'université en fonction du pays sélectionné
+      universitiesByCountry[pays].forEach(universityName => {
+          const option = document.createElement('option');
+          option.textContent = universityName;
+          universitySelect.appendChild(option);
+      });
+  });
+  </script> 
+</body>
+</html>
