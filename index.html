@@ -88,13 +88,16 @@
   }
   
   body {
-    background-image: url('style/fond.png'); /* Remplacez 'chemin/vers/votre/image.jpg' par le chemin de votre image */
+    /*background-image: url('style/fond.png'); /* Remplacez 'chemin/vers/votre/image.jpg' par le chemin de votre image */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed; /* Pour que l'image reste fixe lors du défilement */
     background-position: center center;
-    background-color: rgba(255, 255, 255, 0); /* Réglez l'opacité ici (0 = transparent, 1 = opaque) */
-    color: white;
+    background-color: rgb(43, 54, 57); /* Réglez l'opacité ici (0 = transparent, 1 = opaque) */
+    height: 100vh;
+    display: flex;
+    background-position: center center;
+    color: rgb(241, 241, 241);
 }
   
   .body-content{
@@ -385,7 +388,7 @@
     <label for="name">Nom:</label>
     <input type="text" id="name" name="name"><
     <label for="firstname">  Prénom:</label>
-    <input type="text" id="firstname" name="firstname"> <br><br>
+    <input type="text" id="prénom" name="prenom"> <br><br>
     <Label for="departement">Département:</label>
     <select id="departement" name="departement">
         <option value="SN-L">SN-L</option>
@@ -464,7 +467,7 @@
         <option value="s9">S9</option>
     </select>
     <label for="date">Dates de la mobilité :</label>
-    <input type="date" id="date" name="date"> <br><br>
+    <input type="date" id="date" name="date de mobilité"> <br><br>
     <Label for="cadre">Cadre:</label>
     <select id="cadre" name="cadre">
         <option value="erasmus">Erasmus</option>
@@ -480,22 +483,20 @@
         <option value="autre">Autre</option>
     </select><br><br>
     <label for="message">Quelles sont les exigences linguistiques (le niveau de langue requis pour les cours...) et les dates approximatives des examens de fin ?</label><br>
-    <textarea type="exigences" name="message"  rows="5" cols="50"></textarea><br><br>
+    <textarea type="message" name="les exigences linguistiques (le niveau de langue requis pour les cours...) et les dates approximatives des examens de fin"  rows="5" cols="50"></textarea><br><br>
     <label for="message">Quelle est la moyenne requise pour réussir en une ou deux sessions, et quand se déroule la session de rattrapage ?</label><br>
-    <textarea type="moyenne" name="message"  rows="5" cols="50"></textarea><br><br>
-    <label for="message">Comment est la qualité de l'accueil et quelle est l'aide fournie par l'établissement étranger ?</label><br>
-    <textarea type="accueil" name="message"  rows="5" cols="50"></textarea><br><br>
+    <textarea type="moyenne" name="la moyenne requise pour réussir en une ou deux sessions, et quand se déroule la session de rattrapage"  rows="5" cols="50"></textarea><br><br>
     <label for="message">Quelles sont les difficultés rencontrées à votre arrivée et quelles sont les ressources les plus utiles pour votre orientation
         (les centres d'information touristique, les cartes de transport en commun et le personnel des bureaux internationaux etc ...)</label><br>
-    <textarea type="difficultes" name="message"  rows="5" cols="50"></textarea><br><br>
+    <textarea type="difficultes" name="les difficultés rencontrées à votre arrivée et quelles sont les ressources les plus utiles pour votre orientation (les centres d'information touristique, les cartes de transport en commun et le personnel des bureaux internationaux etc ...)"  rows="5" cols="50"></textarea><br><br>
     <label for="message">décrire vos cours et expliquer comment vous les avez choisis(écrivez à côté du chaque cours : code et crédit). </label><br>
-    <textarea type="vie" name="message"  rows="5" cols="50"></textarea><br><br>
+    <textarea type="vie" name="décrire vos cours et expliquer comment vous les avez choisis(écrivez à côté du chaque cours : code et crédit)."  rows="5" cols="50"></textarea><br><br>
     <label for="message">Quel sont vos conseils concernat le choix des cours</label><br>
-    <textarea type="conseils cours" name="message"  rows="5" cols="50"></textarea><br><br>
+    <textarea type="conseils cours" name="Quel sont vos conseils concernat le choix des cours"  rows="5" cols="50"></textarea><br><br>
     <label for="message">Quels étaient les aspects les plus intéressants ou surprenants de votre programme académique ? </label><br>
-    <textarea type="comparaison" name="message"  rows="5" cols="50"></textarea><br><br>
+    <textarea type="comparaison" name="les aspects les plus intéressants ou surprenants de votre programme académique"  rows="5" cols="50"></textarea><br><br>
     <label for="message">Y avait-il des différences notables dans les méthodes d'enseignement ou dans le contenu des cours par rapport à l'ENSEEIHT ? </label><br>
-    <textarea type="difference" name="message"  rows="5" cols="50"></textarea><br><br>
+    <textarea type="difference" name="Les différences notables dans les méthodes d'enseignement ou dans le contenu des cours par rapport à l'ENSEEIHT"  rows="5" cols="50"></textarea><br><br>
     <label for="message">Coût de la vie. </label><br><br>
     <label for="message">Logement</label>
     <input type="cout" id="logement" name="logement">
@@ -509,11 +510,14 @@
     <input type="cout" id="assurance" name="assurance">
     <label for="message">Autres</label>
     <input type="cout" id="autres" name="autres"><br><br>
+    <label for="message">Comment est la qualité de l'accueil et quelle est l'aide fournie par l'établissement étranger ?</label><br>
+    <textarea type="accueil" name="la qualité de l'accueil et quelle est l'aide fournie par l'établissement étranger"  rows="5" cols="50"></textarea><br><br>
     <label for="message">Quelles ressources ou services spécifiques avez-vous trouvés utiles sur le campus pour vous aider dans 
       vos études et votre adaptation à la vie universitaire dans ce pays ? </label><br>
-    <textarea type="ressources" name="message"  rows="5" cols="50"></textarea><br><br>
+    <textarea type="ressources" name="Les ressources ou les services spécifiques avez-vous trouvés utiles sur le campus pour vous aider dans 
+    vos études et votre adaptation à la vie universitaire dans ce pays"  rows="5" cols="50"></textarea><br><br>
     <label for="message"> y a-t-il des conseils ou des informations importantes que vous souhaitez partager avec les étudiants qui envisagent de faire le même séjour à l'avenir ?</label><br>
-    <textarea type="message" name="message"  rows="10" cols="80"></textarea><br><br>
+    <textarea type="message" name="des conseils ou des informations importantes que vous souhaitez partager avec les étudiants qui envisagent de faire le même séjour à l'avenir"  rows="10" cols="80"></textarea><br><br>
     <button type="submit">Soumettre</button>
   </form>
 </div>

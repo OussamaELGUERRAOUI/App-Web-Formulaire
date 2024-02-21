@@ -1,48 +1,41 @@
+
 const express = require('express');
-const mysql = require('mysql'); // Assurez-vous d'avoir installé le module mysql
-
+const bodyParser = require('body-parser');
 const app = express();
-const port = 3000;
+const { generatePDF } = require('./pdfCr');
 
-const connection = mysql.createConnection({
-  host: '172.17.0.2',
-  user: 'ri',
-  password: 'Oussama',
-  database: 'ri'
+// Configuration de body-parser pour récupérer les données POST
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Définition de la route pour le formulaire
+app.post('/submit', (req, res) => {
+    const formData = req.body; // Les données du formulaire sont disponibles dans req.body
+    console.log('Données du formulaire:', formData);
+    // Ici, vous pouvez traiter les données comme vous le souhaitez, les enregistrer dans une base de données, les utiliser pour envoyer un e-mail, etc.
+    // Par exemple, pour envoyer une réponse au client :
+    res.send('Formulaire soumis avec succès!');
+    // Ou pour générer un PDF :
+    generatePDF(formData).then(() => {
+      console.log('Le PDF a été généré avec succès.');
+      res.download('formData.pdf', 'formData.pdf', (error) => {
+          if (error) {
+              console.error('Erreur lors du téléchargement du PDF :', error);
+          } else {
+              console.log('PDF téléchargé avec succès.');
+          }
+      });
+  }).catch(error => {
+      console.error('Une erreur est survenue lors de la génération du PDF :', error);
+      res.send('Erreur lors de la soumission du formulaire');
+  });
 });
-
-connection.connect((err) => {
-  if (err) {
-    console.error('Erreur de connexion à la base de données :', err);
-    return;
-  }
-  console.log('Connecté à la base de données MySQL');
-});
-
-app.use(express.static('public'));
-app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
-app.post('/submit', (req, res) => {
-  const formData = req.body;
-
-  const sql = 'INSERT INTO nom_de_votre_table (name, firstname, departement, pays, university, filiere, semestre, cadre, email, message, pub) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
-  const values = [formData.name, formData.firstname, formData.departement, formData.pays, formData.university, formData.filiere, formData.semestre, formData.cadre, formData.email, formData.message, 0];
-
-  connection.query(sql, values, (err, result) => {
-    if (err) {
-      console.error('Erreur lors de l\'insertion des données :', err);
-      res.send('Erreur lors de la soumission du formulaire');
-      return;
-    }
-    console.log('Données insérées avec succès dans la base de données');
-    res.send('Formulaire soumis avec succès !');
-  });
-});
-
+// Lancement du serveur sur le port 3000
+const port = 3000;
 app.listen(port, () => {
-  console.log(`Le serveur écoute sur le port ${port}`);
+    console.log(`Serveur lancé sur le port ${port}`);
 });
