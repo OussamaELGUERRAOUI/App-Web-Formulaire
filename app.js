@@ -7,6 +7,20 @@ const { generatePDF } = require('./pdfCr');
 // Configuration de body-parser pour récupérer les données POST
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//suprrimer le fichier pdf
+function deletePDF(pdfPath) {
+    fs.unlink(pdfPath, (error) => {
+        if (error) {
+            console.error('Erreur lors de la suppression du PDF :', error);
+        } else {
+            console.log('PDF supprimé avec succès.');
+        }
+    });
+}
+
+
+
+
 // Définition de la route pour le formulaire
 app.post('/submit', (req, res) => {
     const formData = req.body; // Les données du formulaire sont disponibles dans req.body
@@ -15,13 +29,16 @@ app.post('/submit', (req, res) => {
     // Par exemple, pour envoyer une réponse au client :
     res.send('Formulaire soumis avec succès!');
     // Ou pour générer un PDF :
+    const pdfPath = 'form'+ formData.name +'.pdf';
     generatePDF(formData).then(() => {
       console.log('Le PDF a été généré avec succès.');
-      res.download('formData.pdf', 'formData.pdf', (error) => {
+      res.download(pdfPath, pdfPath, (error) => {
           if (error) {
               console.error('Erreur lors du téléchargement du PDF :', error);
           } else {
               console.log('PDF téléchargé avec succès.');
+              deletePDF(pdfPath);
+
           }
       });
   }).catch(error => {
