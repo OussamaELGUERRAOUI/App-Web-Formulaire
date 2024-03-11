@@ -3,392 +3,236 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulaire</title>
+  <title>Formulaire du retour d'expérience</title>
   <style>
-  *{  
-    margin:0;
-    padding:0;
+    body {
+      min-height: 100%;
+  }
+  
+  body,
+  div,
+  form,
+  input,
+  textarea,
+  p {
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
   }
   
   h1 {
-    font-size: 2em;
-    font-family: "Core Sans N W01 35 Light";
-    font-weight: normal;
-    margin: .67em 0;
-    display: block;
+      position: absolute;
+      margin: 0;
+      font-size: 25px;
+      color: #af197d;
+      z-index: 2;
   }
   
-  #registered {
-      margin-top: 50px;
+  .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
   }
   
-  #registered img {
-      margin-bottom: 0px;
-      width: 100px;
-      height: 100px;
+  form {
+      width: 100%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 10px 0 #cc0052;
   }
   
-  #registered span {
-      clear: both;
-      display: block;
+  .banner {
+      position: relative;
+      height: 210px;
+      background-image: url("n7.png");
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
   }
   
-  img {
-      margin-bottom: 20px;
-  }
-  
-  .avatar {
-      margin: 10px 0 20px 0;
-  }
-  
-  .module{
-    position:relative;
-    top:10%;    
-    height:65%;
-    width:450px;
-    margin-left:auto;
-    margin-right:auto;
-  }
-  
-  .user {
-      color: #66d8fc;
-      font-weight: bold;
-  }
-  
-  .userlist {
-      float:left;
-      padding: 30px;
-  }
-  
-  .userlist span {
-      color: #0590fc;
-  }
-  
-  .welcome{
-    position:relative;
-    top:30%;    
-    height:65%;
-    width:900px;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top: 50px;
-  }
-  
-  ::-moz-selection {
-    background: #19547c;
-  }
-  ::selection {
-    background: #19547c;
-  }
-  input::-moz-selection {
-    background: #037db6;
-  }
-  input::selection {
-    background: #037db6;
-  }
-  
-  body {
-    /*background-image: url('style/fond.png'); /* Remplacez 'chemin/vers/votre/image.jpg' par le chemin de votre image */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Pour que l'image reste fixe lors du défilement */
-    background-position: center center;
-    background-color: rgb(43, 54, 57); /* Réglez l'opacité ici (0 = transparent, 1 = opaque) */
-    height: 100vh;
-    display: flex;
-    background-position: center center;
-    color: rgb(241, 241, 241);
-}
-  
-  .body-content{
-    position:relative;
-    top:20px;
-    height:700px;
-    width:800px;
-    margin-left:auto;
-    margin-right:auto; 
-    background: transparent;
-  }
-  
-  select,
-  textarea,
-  input[type="text"],
-  input[type="password"],
-  input[type="cout"],
-  input[type="email"],
-  input[type="date"]
-  {
-    height:30px;
-    width:100%;;
-    display: inline-block;
-    vertical-align: middle;
-    height: 34px;
-    padding: 0 10px;
-    margin-top: 3px;
-    margin-bottom: 10px;
-    font-size: 15px;
-    line-height: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: rgba(255, 255, 255, 0.7);
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    border-radius: 2px;
-  }
-  
-  select,
-  textarea,
-  input[type="text"],
-  input[type="password"],
-  input[type="cout"],
-  input[type="email"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    appearance: none;
-    -webkit-transition: background-position 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
-    transition: background-position 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
-  }
-  select:hover,
-  textarea:hover,
-  input[type="text"]:hover,
-  input[type="password"]:hover,
-  input[type="cout"]:hover,
-  input[type="email"]:hover {
-    border-color: rgba(255, 255, 255, 0.5);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: rgba(255, 255, 255, 0.7);
-  }
-  select:focus,
-  textarea:focus,
-  input[type="text"]:focus,
-  input[type="password"]:focus,
-  input[type="cout"]:focus,
-  input[type="email"]:focus {
-    border: 2px solid;
-    border-color: #1e5f99;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #ffffff;
-  }
-  .btn {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    margin: 3px 0;
-    padding: 6px 20px;
-    font-size: 15px;
-    line-height: 20px;
-    height: 34px;
-    background-color: rgba(0, 0, 0, 0.15);
-    color: #00aeff;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 rgba(0, 0, 0, 0);
-    border-radius: 2px;
-    -webkit-transition: background-color 0.2s, box-shadow 0.2s, background-color 0.2s, border-color 0.2s, color 0.2s;
-    transition: background-color 0.2s, box-shadow 0.2s, background-color 0.2s, border-color 0.2s, color 0.2s;
-  }
-  .btn.active,
-  .btn:active {
-    padding: 7px 19px 5px 21px;
-  }
-  .btn.disabled:active,
-  .btn[disabled]:active,
-  .btn.disabled.active,
-  .btn[disabled].active {
-    padding: 6px 20px !important;
-  }
-  .btn:hover,
-  .btn:focus {
-    background-color: rgba(0, 0, 0, 0.25);
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 rgba(0, 0, 0, 0);
-  }
-  .btn:active,
-  .btn.active {
-    background-color: rgba(0, 0, 0, 0.15);
-    color: rgba(255, 255, 255, 0.8);
-    border-color: rgba(255, 255, 255, 0.07);
-    box-shadow: inset 1.5px 1.5px 3px rgba(0, 0, 0, 0.5);
-  }
-  .btn-primary {
-    background-color: #098cc8;
-    color: #ffffff;
-    border: 1px solid transparent;
-    box-shadow: 0 0 rgba(0, 0, 0, 0);
-    border-radius: 2px;
-    -webkit-transition: background-color 0.2s, box-shadow 0.2s, background-color 0.2s, border-color 0.2s, color 0.2s;
-    transition: background-color 0.2s, box-shadow 0.2s, background-color 0.2s, border-color 0.2s, color 0.2s;
-    background-image: -webkit-linear-gradient(top, #0f9ada, #0076ad);
-    background-image: linear-gradient(to bottom, #0f9ada, #0076ad);
-    border: 0;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.15) inset;
-  }
-  .btn-primary:hover,
-  .btn-primary:focus {
-    background-color: #21b0f1;
-    color: #ffffff;
-    border-color: transparent;
-    box-shadow: 0 0 rgba(0, 0, 0, 0);
-  }
-  .btn-primary:active,
-  .btn-primary.active {
-    background-color: #006899;
-    color: rgba(255, 255, 255, 0.7);
-    border-color: transparent;
-    box-shadow: inset 1.5px 1.5px 3px rgba(0, 0, 0, 0.5);
-  }
-  .btn-primary:hover,
-  .btn-primary:focus {
-    background-image: -webkit-linear-gradient(top, #37c0ff, #0097dd);
-    background-image: linear-gradient(to bottom, #37c0ff, #0097dd);
-  }
-  .btn-primary:active,
-  .btn-primary.active {
-    background-image: -webkit-linear-gradient(top, #006ea1, #00608d);
-    background-image: linear-gradient(to bottom, #006ea1, #00608d);
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6) inset, 0 0 0 1px rgba(255, 255, 255, 0.07) inset;
-  }
-  .btn-block {
-    display: block;
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  
-  .alert {
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 4px 20px 4px 20px;
-    font-size: 13px;
-    line-height: 20px;
-    margin-bottom: 20px;
-    text-shadow: none;
-    position: relative;
-    background-color: #272e3b;
-    color: rgba(255, 255, 255, 0.7);
-    border: 1px solid #000;
-    box-shadow: 0 0 0 1px #363d49 inset, 0 5px 10px rgba(0, 0, 0, 0.75);
-  }
-  .alert-error {
-    color: #f00;
-    background-color: #360e10;
-    box-shadow: 0 0 0 1px #551e21 inset, 0 5px 10px rgba(0, 0, 0, 0.75);
-  }
-  .alert:empty{
-      display: none;
-  }
-  .alert-success {
-    color: #21ec0c;
-    background-color: #15360e;
-    box-shadow: 0 0 0 1px #2a551e inset, 0 5px 10px rgba(0, 0, 0, 0.75);
+  .banner::after {
+      content: "";
+      /*background-color: rgba(0, 0, 0, 0.4);*/
+      position: absolute;
+      width: 100%;
+      height: 100%;
   }
 
-
-
-/* styles.css */
-
-/* Définition de la grille */
-.form-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr; /* Trois colonnes, la première et la dernière occupe 1 fraction de l'espace disponible, la seconde 2 fractions */
-    gap: 10px; /* Espacement entre les éléments */
-  }
-  
-  /* Styles pour les labels */
   label {
-    display: inline-block;
-    text-align: left;
-    margin-right: 20px; /* Espacement entre le label et le champ */
-    max-width: 50%; /* Limite la largeur à 50% de la largeur de la page */
-  }
-
-  label[for="cot"] {
-    display: inline-block;
-    text-align: left;
-    margin-right: 10px; /* Espacement entre le label et le champ */
-    max-width: 50%; /* Limite la largeur à 50% de la largeur de la page */
+     
+      margin-left: 30px;
   }
   
+  select {}
   
-  /* Styles pour les champs de saisie */
-  input[type="text"],
-  input[type="email"],
-  input[type="date"],
-  select{
-    width: 15%; /* Utilise tout l'espace disponible dans la deuxième colonne */
-    padding: 5px;
-    border: 3px solid #0a0505;
-    border-radius: 8px;
-    box-sizing: border-box;
+  
+  
+  
+  input {
+      width: 15%;
+      padding: 5px;
+      margin-left: 20px ;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+    
+      
+
   }
-
-  input[type="cout"]
-  {
-    width: 3%; /* Utilise tout l'espace disponible dans la deuxième colonne */
-    padding: 5px;
-    border: 3px solid #0a0505;
-    border-radius: 8px;
-    box-sizing: border-box;
-  }
-
-
+  
   textarea {
-    width: 50%; /* Utilise tout l'espace disponible dans la deuxième colonne */
-    height:50%;
-    padding: 5px;
-    border: 3px solid #070505;
-    border-radius: 8px;
-    box-sizing: border-box;
+      width: 50%;
+      padding: 5px;
+      margin-left: 20px;
+      border: 3px solid #e7e0e0;
+      border-radius: 8px; 
+      box-sizing: border-box;
   }
   
-  /* Style pour les boutons */
+  .item:hover p,
+  input:hover::placeholder {
+      color: #cc0052;
+  }
+  
+  .item input:hover,
+  .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 6px 0 #cc0052;
+      color: #cc0052;
+  }
+  
+  .item {
+      position: relative;
+      margin: 10px 0;
+  }
+  
+  .btn-block {
+      margin-top: 10px;
+      text-align: center;
+  }
+  
+  .container {
+      text-align: center; /* Alignement des éléments au centre */
+      margin: 0 auto; /* Centre le conteneur horizontalement */
+      max-width: 1000px; /* Largeur maximale du conteneur */
+  }
+  
+  #university {
+      margin-right: 50px; /* Ajoute une marge à gauche */
+  }
+  
+  #pays {
+      margin-left: 20px; /* Ajoute une marge à gauche */
+  }
+  
   button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #cc0052;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
   }
   
   button:hover {
-    background-color: #0056b3;
+      background: #ff0066;
   }
   
-  /* Style pour l'image */
-  .container {
-    display: flex;
-    align-items: flex-start; /* Aligne le contenu en haut */
-  }
-  .img-container {
-    grid-column: 2; /* Occupe la troisième colonne */
-    display: flex;
-    justify-content: flex-start; /* Aligner l'image à droite */
-    align-items: center; /* Centrer l'image verticalement */
-    position: absolute;
-    top: 0px; /* Décalage de l'image vers le bas */
-    right: 0px; /* Décalage de l'image vers la droite */
+  select{
+      width: 15%; /* Utilise tout l'espace disponible dans la deuxième colonne */
+      padding: 5px;
+      border: 3px solid #e7e0e0;
+      border-radius: 8px;
+      box-sizing: border-box;
 
-  }
+    }
   
-  .img-container img {
-    width: 800px; /* Taille de l'image en pourcentage de la largeur du conteneur */
-    max-width: 400px; /* Largeur maximale de l'image */
-    border-radius: 8px; /* Assurer que l'image est un peu arrondie */
-    margin-left: 10px; /* Espacement entre l'image et les autres éléments */
-    background-repeat: no-repeat;
-    background-attachment: scroll;
+  @media (min-width: 568px) {
+  
+      .name-item,
+      .contact-item {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+      }
+  
+      .contact-item .item {
+          width: calc(50% - 8px);
+      }
+  
+      .name-item input {
+          width: calc(50% - 20px);
+      }
+  
+      .contact-item input {
+          width: calc(100% - 12px);
+      }
+  
+      .accordion-header {
+          background-color: rgb(223, 57, 195);
+          color: white;
+          padding: 3px;
+          border-radius: 5px 5px 10px 10px;
+          width:650px;
+          cursor: pointer;
+          position: relative;
+      }
+      
+      .accordion-header-text {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          max-width: calc(50% - 20px); 
+          display: inline-block;
+          font-size: 0.4em;
+      } 
+      
+      .accordion-toggle {
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translateY(-50%);
+          font-size: 20px;
+          line-height: 1;
+          cursor: pointer;
+      }
+      
+      .accordion-toggle.collapsed::after {
+          content: '-';
+      }
+      
+      .accordion-toggle::after {
+          content: '+';
+      }
   }
   </style>
 </head>
 <body>
-  <h1>Formulaire de retour d'expérience</h1>
+  <div class="testbox">
   <form action="/submit" method="post">
+    <div class="banner">
+        
+      </div>
+      <br><br>
+      <h1>Fiche ETUDIANT</h1>
+      <br><br>
     <label for="name">Nom:</label>
-    <input type="text" id="name" name="name"><
+    <input type="text" id="name" name="name">
     <label for="firstname">  Prénom:</label>
     <input type="text" id="prénom" name="prenom"> <br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
     <Label for="departement">Département:</label>
     <select id="departement" name="departement">
         <option value="SN-L">SN-L</option>
@@ -411,7 +255,31 @@
         <option value="3EA SEF">3EA SEF (s8)</option>
         <option value="3EA SM">3EA SM (s8)</option>
     </select>
-    <label for="pays">   Pays destination</label>
+    <br><br>
+    
+    
+    <Label for="semestre">Semestre:</label>
+    <select id="semestre" name="semestre">
+        <option value="s7">S7</option>
+        <option value="s8">S8</option>
+        <option value="s9">S9</option>
+    </select>
+    <label for="date">Dates de la mobilité :</label>
+    <input type="date" id="date" name="date de mobilité"> <br><br>
+    <label for="durre">Durée de la mobilité:</label>
+    <input  id="duree mobilite" name="duree mobilite"> 
+    <Label for="cadre">Cadre:</label>
+    <select id="cadre" name="cadre">
+        <option value="erasmus">Erasmus</option>
+        <option value="echange">Echange</option>
+        <option value="double-diplome">Double-diplôme</option>
+    </select> 
+
+
+    <br><br><br><br>
+    <h1>Fiche UNIVERSITE</h1>
+    <br><br>
+    <label>Pays destination : </label>
     <select id="pays" name="pays">
       <option value="royaumeUni">Royaume-Uni</option>
       <option value="canada">Canada</option>
@@ -453,77 +321,136 @@
       <option value="malaisie">Malaisie</option>
       <option value="serbie">Serbie</option>
       <option value="france">France</option>
-    </select><br><br>
-    <label for="university">Université:</label>
+    </select>
+    <label>Ville : </label>
+    <input type="text" id="ville" name="ville">
+    <br><br>
+    <label for="university">Université : </label>
     <select id="university" name="university">
-        <!-- Les options des universités seront ajoutées dynamiquement ici -->
     </select>
-    <label for="filiere">Filière:</label>
-    <input type="text" id="filiere" name="filiere"><br><br>
-    <Label for="semestre">Semestre:</label>
-    <select id="semestre" name="semestre">
-        <option value="s7">S7</option>
-        <option value="s8">S8</option>
-        <option value="s9">S9</option>
+    <label>Type de séjour : </label>
+    <select id="type" name="type">
+        <option value="echange">Echange avec acquisition de crédits</option>
+        <option value="DD">Double diplome</option>
     </select>
-    <label for="date">Dates de la mobilité :</label>
-    <input type="date" id="date" name="date de mobilité"> <br><br>
-    <Label for="cadre">Cadre:</label>
+    <br><br>
+    <label>Cadre : </label>
     <select id="cadre" name="cadre">
         <option value="erasmus">Erasmus</option>
-        <option value="echange">Echange</option>
-        <option value="double-diplome">Double-diplôme</option>
-    </select> 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email"><br><br><br><br>
-    <label for="langue">Langue d'enseignement:</label><br>
+        <option value="Moverdd">Free Mover</option>
+        <option value="fitec">accords Fitec</option>
+        <option value="master">Master</option>
+    </select>
+    
+    <label>Possibilité de stage rémunéré : </label>
+    <select id="stage" name="stage">
+        <option value="oui">Oui</option>
+        <option value="non">Non</option>
+    </select>
+    <br><br>
+    <label for="langue">Langue d'enseignement : </label>
     <select id="langue" name="langue">
         <option value="anglais">Anglais</option>
-        <option value="espagnol">Français</option>
-        <option value="autre">Autre</option>
-    </select><br><br>
-    <label for="message">Quelles sont les exigences linguistiques (le niveau de langue requis pour les cours...) et les dates approximatives des examens de fin ?</label><br>
-    <textarea type="message" name="les exigences linguistiques (le niveau de langue requis pour les cours...) et les dates approximatives des examens de fin"  rows="5" cols="50"></textarea><br><br>
-    <label for="message">Quelle est la moyenne requise pour réussir en une ou deux sessions, et quand se déroule la session de rattrapage ?</label><br>
-    <textarea type="moyenne" name="la moyenne requise pour réussir en une ou deux sessions, et quand se déroule la session de rattrapage"  rows="5" cols="50"></textarea><br><br>
-    <label for="message">Quelles sont les difficultés rencontrées à votre arrivée et quelles sont les ressources les plus utiles pour votre orientation
-        (les centres d'information touristique, les cartes de transport en commun et le personnel des bureaux internationaux etc ...)</label><br>
-    <textarea type="difficultes" name="les difficultés rencontrées à votre arrivée et quelles sont les ressources les plus utiles pour votre orientation (les centres d'information touristique, les cartes de transport en commun et le personnel des bureaux internationaux etc ...)"  rows="5" cols="50"></textarea><br><br>
-    <label for="message">décrire vos cours et expliquer comment vous les avez choisis(écrivez à côté du chaque cours : code et crédit). </label><br>
-    <textarea type="vie" name="décrire vos cours et expliquer comment vous les avez choisis(écrivez à côté du chaque cours : code et crédit)."  rows="5" cols="50"></textarea><br><br>
-    <label for="message">Quel sont vos conseils concernat le choix des cours</label><br>
-    <textarea type="conseils cours" name="Quel sont vos conseils concernat le choix des cours"  rows="5" cols="50"></textarea><br><br>
-    <label for="message">Quels étaient les aspects les plus intéressants ou surprenants de votre programme académique ? </label><br>
-    <textarea type="comparaison" name="les aspects les plus intéressants ou surprenants de votre programme académique"  rows="5" cols="50"></textarea><br><br>
-    <label for="message">Y avait-il des différences notables dans les méthodes d'enseignement ou dans le contenu des cours par rapport à l'ENSEEIHT ? </label><br>
-    <textarea type="difference" name="Les différences notables dans les méthodes d'enseignement ou dans le contenu des cours par rapport à l'ENSEEIHT"  rows="5" cols="50"></textarea><br><br>
-    <label for="message">Coût de la vie. </label><br><br>
+        <option value="français">Français</option>
+        <option value="Langue du pays d'acceuil">Langue du pays d'acceuil</option>
+    </select>
+    <label>Résidences Universitaires : </label>
+    <select id="residence" name="residence">
+        <option value="oui">Oui</option>
+        <option value="non">Non</option>
+    </select>
+    <br><br>
+    <label>
+        Dates approximatives des épreuves normales et de rattrapage : </label>
+    <input type="text" id="Dates approximatives des examens de fin de session" name="Dates approximatives des examens de fin de session normal et de rattrapage">
+    <label>moyenne requise pour 1 ou 2 session : </label>
+    <input type="text" id="moyenne requise pour 1 ou 2 session" name="moyenne requise pour 1 ou 2 session">
+    <br><br>
+    <label for="message">Quelles sont les exigences linguistiques (le niveau de langue requis pour les cours...)?</label><br>
+    <textarea type="message" name="les exigences linguistiques (le niveau de langue requis pour les cours...) et les dates approximatives des examens de fin"  rows="3" cols="50"></textarea><br><br>
+    <br>
+    <h1>Fiche SEJOUR</h1>
+    <br><br>
+    <label for="message">La satification globale de votre séjour en mobilité international. </label><br>
+    <textarea type="moyenne" name="la moyenne requise pour réussir en une ou deux sessions, et quand se déroule la session de rattrapage"  rows="3" cols="50"></textarea><br><br>
+    <br>
+    <h1>Préparation du séjour</h1>
+    <br><br>
+    <label for="message">Les aides financiers à la mobilité </label><br>
+    <textarea type="difficultes" name="Les aides financiers à la mobilité"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">Les démarches administratives à faire avant le départ. </label><br>
+    <textarea type="vie" name="Les démarches administratives à faire avant le départ"  rows="3" cols="30"></textarea><br><br>
+    <label for="message">Les recommandations pour la préparation du voyage vers cette destination, provenant des étudiants ayant déjà séjourné à cette destination</label><br>
+    <textarea type="conseils cours" name="Les recommandations pour la préparation du voyage vers cette destination, provenant des étudiants ayant déjà séjourné à cette destination"  rows="3" cols="50"></textarea><br><br>
+    <br>
+    <h1>Arrivée à l'université étranger </h1>
+    <br><br>
+    <label for="message">Les démarches administratives à faire à l'arrivée. </label><br>
+    <textarea type="comparaison" name="Les démarches administratives à faire à l'arrivée"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">La qualité d'acceuil et l'aide de l'établissement étranger. </label><br>
+    <textarea type="difference" name="La qualité d'acceuil et l'aide de l'établissement étranger"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">Les difficultés rencontrées à l'arrivée. </label><br>
+    <textarea type="difficultes" name="Les difficultés rencontrées à l'arrivée"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">Les ressources les plus précieuses pour l'orientation à l'arrivée (la carte de transport en commun et les centres d'informations touristiques, ect..).</label><br>
+    <textarea type="ressources" name="Les ressources les plus précieuses pour l'orientation à l'arrivée (la carte de transport en commun et les centres d'informations touristiques, ect..)"  rows="3" cols="50"></textarea><br><br>
+    <br>
+    <h1>Logement</h1>
+    <br><br>
+    <label for="message">Les démarches pour trouver un logement. </label><br>
+    <textarea type="logement" name="Les démarches pour trouver un logement"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">Des suggestions concernant les résidences étudiantes à proximité de l'université. </label><br>
+    <textarea type="residence" name="Des suggestions concernant les résidences étudiantes à proximité de l'université"  rows="3" cols="50"></textarea><br><br>
+    <br>
+    <h1>Coût de la vie</h1>
+    <br><br>
     <label for="message">Logement</label>
     <input type="cout" id="logement" name="logement">
     <label for="message">Nourriture</label>
     <input type="cout" id="nourriture" name="nourriture">
     <label for="message">Transport</label>
     <input type="cout" id="transport" name="transport">
-    <label for="message">Frais à l'université d'acceil</label>
-    <input type="cout" id="frais" name="frais"><br>
+    <label for="message">Frais à l'université d'acceuil</label>
+    <input type="cout" id="frais" name="frais"><br><br>
     <label for="message">Assurance médicale complémentaire</label>
     <input type="cout" id="assurance" name="assurance">
     <label for="message">Autres</label>
     <input type="cout" id="autres" name="autres"><br><br>
-    <label for="message">Comment est la qualité de l'accueil et quelle est l'aide fournie par l'établissement étranger ?</label><br>
-    <textarea type="accueil" name="la qualité de l'accueil et quelle est l'aide fournie par l'établissement étranger"  rows="5" cols="50"></textarea><br><br>
-    <label for="message">Quelles ressources ou services spécifiques avez-vous trouvés utiles sur le campus pour vous aider dans 
-      vos études et votre adaptation à la vie universitaire dans ce pays ? </label><br>
-    <textarea type="ressources" name="Les ressources ou les services spécifiques avez-vous trouvés utiles sur le campus pour vous aider dans 
-    vos études et votre adaptation à la vie universitaire dans ce pays"  rows="5" cols="50"></textarea><br><br>
-    <label for="message"> y a-t-il des conseils ou des informations importantes que vous souhaitez partager avec les étudiants qui envisagent de faire le même séjour à l'avenir ?</label><br>
-    <textarea type="message" name="des conseils ou des informations importantes que vous souhaitez partager avec les étudiants qui envisagent de faire le même séjour à l'avenir"  rows="10" cols="80"></textarea><br><br>
+    <br>
+    <h1>Expérience académique</h1>
+    <br><br>
+    <label for="message">La difficulté à obtenir les cours désirés.</label><br>
+    <textarea type="difficultes" name="La difficulté à obtenir les cours désirés"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">les cours proposés.</label><br>
+    <textarea type="cours" name="les cours proposés"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">Des recommandations concernant le choix des cours.</label><br>
+    <textarea type="recommandations" name="Des recommandations concernant le choix des cours"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">Les connaissances linguistiques pour suivre ls cours.</label><br>
+    <textarea type="connaissances" name="Les connaissances linguistiques pour suivre ls cours"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">Les méthodes d'enseignement/de travail des professeurs par rapport à l'ENSEEIHT.</label><br>
+    <textarea type="difficultes" name="Les méthodes d'enseignement/de travail des professeurs par rapport à l'ENSEEIHT"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">La charge de travail par rapport à l'ENSEEIH.</label><br>
+    <textarea type="charge" name="La charge de travail par rapport à l'ENSEEIH"  rows="3" cols="50"></textarea><br><br>
+    <br>
+    <h1>Les activités scolaires et parascolaires</h1>
+    <br><br>
+    <label for="message">Les activités parascolaires offertes par l'université aux étudiants internationaux.</label><br>
+    <textarea type="activites" name="Les activités parascolaires offertes par l'université aux étudiants internationaux"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">Les activités culturelles ou touristiques pour les soirées et fin de semaines.</label><br>
+    <textarea type="activites" name="Les activités culturelles ou touristiques pour les soirées et fin de semaines"  rows="3" cols="50"></textarea><br><br>
+    <br><br>
+
+    <h1>Des conseils pour les futurs étudiants à la mobilité</h1>
+    <br><br>
+  
+    <textarea type="conseils" name="Des conseils pour les futurs étudiants à la mobilité"  rows="6" cols="50"></textarea><br><br>
+    <br>
+
+
+    
     <button type="submit">Soumettre</button>
   </form>
 </div>
-  <div class="img-container">
-    <img src="style/imageINP.jpeg" >
-  </div>
+  
 
   <script>
   const paysSelect = document.getElementById('pays');
