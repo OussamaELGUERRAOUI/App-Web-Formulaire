@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire du retour d'expérience</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  
+  <Link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="testbox">
+  <form action="/submit" method="post">
+    <div class="banner">
+        
+      </div>
+      <br><br>
+      <h1>Fiche ETUDIANT</h1>
+      <br><br>
+    <label for="name">Nom:</label>
+    <input type="text" id="name" name="nom">
+    <label for="firstname">  Prénom:</label>
+    <input type="text" id="prénom" name="prenom"> <br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <Label for="departement">Département:</label>
+    <select id="departement" name="departement">
+        <option value="SN-L">SN-L</option>
+        <option value="SN-B">SN-B</option>
+        <option value="SN-M">SN-M</option>
+        <option value="SN-T">SN-T</option>
+        <option value="SN-R">SN-R</option>
+        <option value="SN-A">SN-A</option>
+        <option value="MF2E">MF2E</option>
+        <option value="MF2E Eau et Environnement">MF2E Eau et Environnement</option>
+        <option value="MF2E Energie-FEP">MF2E Energie</option>
+        <option value="3EA Electronique">3EA Electronique (s7)</option>
+        <option value="3EA electrique et simulation">3EA electrique et simulation (s7)</option>
+        <option value="3EA energie">3EA energie (s7)</option>
+        <option value="3EA InSyst">3EA InSyst (s8)</option>
+        <option value="3EA SysCom">3EA SysCom (s8)</option>
+        <option value="3EA PN">3EA PN (s8)</option>
+        <option value="3EA IATI">3EA IATI (s8)</option>
+        <option value="3EA SATR">3EA SATR (s8)</option>
+        <option value="3EA SEF">3EA SEF (s8)</option>
+        <option value="3EA SM">3EA SM (s8)</option>
+    </select>
+    <br><br>
+    
+    
+    <Label for="semestre">Semestre:</label>
+    <select id="semestre" name="semestre">
+        <option value="s7">S7</option>
+        <option value="s8">S8</option>
+        <option value="s9">S9</option>
+    </select>
+    <label for="date">Dates de la mobilité :</label>
+    <input type="date" id="date" name="date_mobilite"> <br><br>
+    <label for="durre">Durée de la mobilité:</label>
+    <input  id="duree mobilite" name="durree_mobilite"> 
+    
+
+
+    <br><br><br><br>
+    <h1>Fiche UNIVERSITE</h1>
+    <br><br>
+    <label>Pays destination : </label>
+    <select id="pays" name="pays">
+          
+      <option value="<%= selectedPays %>"><%= selectedPays %></option>
+     
+    </select><br><br>
+    <label>Ville : </label>
+    <input type="text" id="ville" name="ville">
+    <br><br>
+    <label for="university">Université : </label>
+    <select id="university" name="university">
+         
+      <option value="<%= selectedEcole %>"><%= selectedEcole %></option>
+
+    </select>
+    <label>Type de séjour : </label>
+    <select id="type" name="type_sejour">
+        <option value="Echange avec acquisition de crédits">Echange avec acquisition de crédits</option>
+        <option value="Double diplome">Double diplome</option>
+    </select>
+    <br><br>
+    <label>Cadre : </label>
+    <select id="cadre" name="cadre">
+        <option value="erasmus">Erasmus</option>
+        <option value="Free Mover">Free Mover</option>
+        <option value="accords Fitec">accords Fitec</option>
+        <option value="master">Master</option>
+    </select>
+    
+    <label>Possibilité de stage rémunéré : </label>
+    <select id="stage" name="stage_remunere">
+        <option value="oui">Oui</option>
+        <option value="non">Non</option>
+    </select>
+    <br><br>
+    <label for="langue">Langue d'enseignement : </label>
+    <select id="langue" name="langue_enseignement">
+        <option value="anglais">Anglais</option>
+        <option value="français">Français</option>
+        <option value="Langue du pays d'acceuil">Langue du pays d'acceuil</option>
+    </select>
+    <label>Résidences Universitaires : </label>
+    <select id="residence" name="residence_universitaire">
+        <option value="oui">Oui</option>
+        <option value="non">Non</option>
+    </select>
+    <br><br>
+    <label>
+        Dates approximatives des épreuves normales et de rattrapage : </label>
+    <input type="text" id="date_normale_rattrapage" name="date_normale_rattrapage">
+    <label>moyenne requise pour 1 ou 2 session : </label>
+    <input type="text" id="moyenne" name="moyenne">
+    <br><br>
+    <label for="message">Quelles sont les exigences linguistiques (le niveau de langue requis pour les cours...)?</label><br>
+    <textarea type="message" name="exigence_linguistique"  rows="3" cols="50"></textarea><br><br>
+    <br>
+    <h1>Fiche SEJOUR</h1>
+    <br><br>
+    <label for="message">La satification globale de votre séjour en mobilité international. </label><br>
+    <textarea type="moyenne" name="satis_sejour"  rows="3" cols="50"></textarea><br><br>
+    <br>
+    <h1>Préparation du séjour</h1>
+    <br><br>
+    <label for="message">Les aides financiers à la mobilité </label><br>
+    <textarea type="difficultes" name="aides"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">Les démarches administratives à faire avant le départ. </label><br>
+    <textarea type="vie" name="demarches_administratives"  rows="3" cols="30"></textarea><br><br>
+    <label for="message">Les recommandations pour la préparation du voyage vers cette destination, provenant des étudiants ayant déjà séjourné à cette destination</label><br>
+    <textarea type="conseils cours" name="recommendations"  rows="3" cols="50"></textarea><br><br>
+    <br>
+    <h1>Arrivée à l'université étranger </h1>
+    <br><br>
+    <label for="message">Les démarches administratives à faire à l'arrivée. </label><br>
+    <textarea type="comparaison" name="demarches_ad_arri"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">La qualité d'acceuil et l'aide de l'établissement étranger. </label><br>
+    <textarea type="difference" name="acceuil_aide"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">Les difficultés rencontrées à l'arrivée. </label><br>
+    <textarea type="difficultes" name="difficulte"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">Les ressources les plus précieuses pour l'orientation à l'arrivée (la carte de transport en commun et les centres d'informations touristiques, ect..).</label><br>
+    <textarea type="ressources" name="ressource_orrientation"  rows="3" cols="50"></textarea><br><br>
+    <br>
+    <h1>Logement</h1>
+    <br><br>
+    <label for="message">Les démarches pour trouver un logement. </label><br>
+    <textarea type="logement" name="demarche_recherche"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">Des suggestions concernant les résidences étudiantes à proximité de l'université. </label><br>
+    <textarea type="residence" name="lrecommandation"  rows="3" cols="50"></textarea><br><br>
+    <br>
+    <h1>Coût de la vie</h1>
+    <br><br>
+    <label for="message">Logement</label>
+    <input type="integer" id="logement" name="logement">
+    <label for="message">Nourriture</label>
+    <input type="cout" id="nourriture" name="nourriture">
+    <label for="message">Transport</label>
+    <input type="cout" id="transport" name="transport"> <br><br>
+    <label for="message">Frais à l'université d'acceuil</label> 
+    <input type="cout" id="frais" name="frais_scolarite">
+    <label for="message">mutuelle</label>
+    <input type="cout" id="assurance" name="assurance">
+    <label for="message">Autres</label>
+    <input type="cout" id="autres" name="autres"><br><br>
+    <br>
+    <h1>Expérience académique</h1>
+    <br><br>
+    <label for="message">La difficulté à obtenir les cours désirés.</label><br>
+    <textarea type="difficultes" name="cours_desire"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">les cours proposés.</label><br>
+    <textarea type="cours" name="cours_propose"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">Des recommandations concernant le choix des cours.</label><br>
+    <textarea type="recommandations" name="recommandation_choix"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">Les connaissances linguistiques pour suivre ls cours.</label><br>
+    <textarea type="connaissances" name="connaissances_linguistique"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">Les méthodes d'enseignement/de travail des professeurs par rapport à l'ENSEEIHT.</label><br>
+    <textarea type="difficultes" name="difference_enseeiht"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">La charge de travail par rapport à l'ENSEEIH.</label><br>
+    <textarea type="charge" name="charge_parrapport_enseeiht"  rows="3" cols="50"></textarea><br><br>
+    <br>
+    <h1>Les activités scolaires et parascolaires</h1>
+    <br><br>
+    <label for="message">Les activités parascolaires offertes par l'université aux étudiants internationaux.</label><br>
+    <textarea type="activites" name="parascolaire"  rows="3" cols="50"></textarea><br><br>
+    <label for="message">Les activités culturelles ou touristiques pour les soirées et fin de semaines.</label><br>
+    <textarea type="activites" name="culturelle"  rows="3" cols="50"></textarea><br><br>
+    <br><br>
+
+    <h1>Des conseils pour les futurs étudiants à la mobilité</h1>
+    <br><br>
+  
+    <textarea type="conseils" name="conseil"  rows="6" cols="50"></textarea><br><br>
+    <br>
+
+
+    
+    <button type="submit">Soumettre</button>
+  </form>
+</div>
+  
+
+  <script src="affdonee.js"> </script> 
+</body>
+</html>

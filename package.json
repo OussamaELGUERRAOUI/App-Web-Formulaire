@@ -9,11 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.9",
     "exceljs": "^4.4.0",
     "express": "^4.18.2",
     "mysql": "^2.18.1",
+    "mysql2": "^3.9.2",
     "pdf-lib": "^1.17.1",
     "pdf-parse": "^1.1.1",
-    "pdf-to-text": "^0.0.7"
+    "pdf-to-text": "^0.0.7",
+    "xlsx": "^0.18.5"
   }
 }
