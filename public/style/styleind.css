@@ -1,0 +1,108 @@
+body {
+    background-color: #fbfbfb;
+}
+@media (min-width: 991.98px) {
+    main {
+        padding-left: 240px;
+    }
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 20px 0 0; /* Height of navbar */
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+    width: 240px;
+    z-index: 600;
+    background-color: #ffffff15 ;
+}
+
+@media (max-width: 991.98px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+.sidebar .active-dark {
+    background-color: #343a40 !important;
+    color: white !important;
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.content {
+    margin-top: 58px;
+    padding: 0px 100px 100px 300px;
+    flex-grow: 1;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    max-height: 200px; /* Define the maximum height */
+    overflow-y: auto;  /* Add vertical scrollbar when necessary */
+}
+
+.dropdown.open .dropdown-content {
+    display: block;
+}
+
+.dropdown-content label {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content label:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-button {
+    cursor: pointer;
+    padding: 12px 16px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    display: inline-block;
+}
+
+.phrase-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+}
+.actions {
+    display: flex;
+    gap: 10px;
+}
+.phrase-text {
+    flex-grow: 1;
+    padding-right: 10px;
+}
+.hidden {
+    text-decoration: line-through;
+    color: #bbb;
+}
+.label {
+    display: block;
+}

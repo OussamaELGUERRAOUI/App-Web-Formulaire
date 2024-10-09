@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>test side bar</title>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="style/styleind.css">
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    <div class="d-flex">
+        <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+            <div class="position-sticky">
+                <div class="list-group list-group-flush mx-3 mt-4">
+                    <a ng-click="doClick('addPrinc')" class="list-group-item list-group-item-action py-2 ripple active-dark">
+                        <i class="fas fa-chart-area fa-fw me-3"></i>Information génerale
+                    </a>
+                    <a ng-click="doClick('addInfo')" class="list-group-item list-group-item-action py-2 ripple">
+                        <i class="fas fa-chart-area fa-fw me-3"></i>Information de l'école (ou université)
+                    </a>
+                    <a ng-click="doClick('addSchool')" class="list-group-item list-group-item-action py-2 ripple">
+                        <i class="fas fa-lock fa-fw me-3"></i><span>Ajouter une nouvelle école (ou université) étranger </span>
+                    </a>
+                    <a ng-click="doClick('addBloc')" class="list-group-item list-group-item-action py-2 ripple">
+                        <i class="fas fa-chart-line fa-fw me-3"></i><span>Ajouter un bloc</span>
+                    </a>
+                    <a ng-click="doClick('addQuestion')" class="list-group-item list-group-item-action py-2 ripple">
+                        <i class="fas fa-credit-card fa-fw me-3"></i><span>Ajouter une question</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content">
+            <div ng-show="showPrinc">
+                <form novalidate>
+                    <div class="form-group">
+                        <h1 class="text-center">Information génerale</h1>
+                    </div>
+                </form>
+            </div>
+            <div ng-show="showAddInfo" >
+                <form novalidate>
+                    <div class="form-group">
+                        <label for="schoolName">Nom de l'école :</label>
+                        <input type="text" class="form-control" id="schoolName" ng-model="info.schoolName" ng-disabled="!editMode">
+                    </div>
+                 <!--  <div class="form-group">
+                        <label for="schoolLogo">Logo de l'école :</label>
+                        <input type="file" class="form-control" id="schoolLogo" ng-model="info.schoolLogo" accept="image/*" ng-disabled="!editMode">
+                    </div> -->
+                    <div class="form-group">
+                        <label for="file">Importer Excel/CSV :</label>
+                        <input type="file" class="form-control" id="file" ng-model="info.file" accept=".csv,.xls,.xlsx" ng-disabled="!editMode">
+                    </div>
+                    <button type="button" class="btn btn-primary" ng-click="toggleEditMode()">Modifier</button>
+                    <button type="button" class="btn btn-success" ng-click="doOK('addInfo')">Enregistrer</button>
+                </form>
+            </div>
+            <div ng-show="showAddSchool">
+                <form novalidate>
+                    <div class="form-group">
+                        <label for="schoolName">Nom de l'école ou l'université :</label>
+                        <input type="text" class="form-control" id="schoolName" ng-model="university.schoolName">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Pays :</label>
+                        <input type="text" class="form-control" id="country" ng-model="university.country">
+                    </div>
+                    <div class="form-group">
+                        <label for="cadre">Cadre :</label>
+                        <div class="dropdown" ng-class="{open: isCadreDropdownOpen}">
+                            <div class="dropdown-button" ng-click="toggleDropdown('cadre')">Choisissez un cadre</div>
+                            <div class="dropdown-content">
+                                <label><input type="checkbox" ng-model="university.cadreOptions['Erasmus']"> Erasmus </label>
+                                <label><input type="checkbox" ng-model="university.cadreOptions['Free Mover']"> Free Mover</label>
+                                <label><input type="checkbox" ng-model="university.cadreOptions['Accord Fitec']"> Accord Fitec </label>
+                                <label><input type="checkbox" ng-model="university.cadreOptions['Master']"> Master</label>
+                                <label><input type="checkbox" ng-model="university.cadreOptions['Double Diplome']">Double Diplome</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="specialite">Spécialité :</label>
+                        <div class="dropdown" ng-class="{open: isSpecialiteDropdownOpen}">
+                            <div class="dropdown-button" ng-click="toggleDropdown('specialite')">Choisissez une spécialité</div>
+                            <div class="dropdown-content">
+                                <label><input type="checkbox" ng-model="university.specialite['061']"> 0610 (Information and Communication Technologies) </label>
+                                <label><input type="checkbox" ng-model="university.specialite['0611']"> 0611 (Computer use)</label>
+                                <label><input type="checkbox" ng-model="university.specialite['0612']"> 0612 (Database and network design and administration)</label>
+                                <label><input type="checkbox" ng-model="university.specialite['0613']"> 0613 (Software and applications development and analysis)</label>
+                                <label><input type="checkbox" ng-model="university.specialite['0619']"> 0619 (Information and Communication Technologies)</label>
+                                <label><input type="checkbox" ng-model="university.specialite['0688']"> 0688  (Information and Communication Technologies (ICTs), inter-disciplinary programmes)</label>
+                                <label><input type="checkbox" ng-model="university.specialite['0710']"> 0710 (Engineering and engineering trades)</label>
+                                <label><input type="checkbox" ng-model="university.specialite['0711']"> 0711 (Chemical engineering and processes)</label>
+                                <label><input type="checkbox" ng-model="university.specialite['0712']"> 0712 (Environmental protection technology)</label>
+                                <label><input type="checkbox" ng-model="university.specialite['0713']"> 0713 (Electricity and energy)</label>
+                                <label><input type="checkbox" ng-model="university.specialite['0714']"> 0714 (Electronics and automation)</label>
+                                <label><input type="checkbox" ng-model="university.specialite['0715']"> 0715 (Mechanics and metal trades)</label>
+                                <label><input type="checkbox" ng-model="university.specialite['0716']"> 0716 (Motor vehicles, ships and aircraft)</label>
+                                <label><input type="checkbox" ng-model="university.specialite['0719']"> 0719 (Engineering and engineering trades, not elsewhere classified)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success" ng-click="doOK('addSchool')">Enregistrer</button>
+                </form>
+            </div>
+
+            <div ng-show="showAddBloc">
+                <div class="container mt-5">
+                    <h1>Gestion des blocs</h1>
+                    <div id="container">
+                    <button class="btn btn-primary mb-3" ng-click="addBloc()">Ajouter un bloc</button>
+                    <button class="btn btn-primary mb-3" ng-click="importExcel()">Importer plusieurs blocs</button>
+                    <input type="file" id="fileInput" ng-show="fileVisible"/>
+                    <button class="btn btn-success" ng-click="addBlocsQuestions()" ng-show="fileVisible">Importer</button>
+                    </div>    
+                    <div ng-repeat="bloc in blocs">
+                        <div class="phrase-container">
+                            <div class="phrase-text" ng-class="{'hidden': !bloc.display}">
+                                <input type="text" ng-model="bloc.title" class="form-control">
+                            </div>
+                            <div class="actions">
+                                <button class="btn btn-secondary" ng-click="move($index, 'up')" ng-disabled="$index === 0">↑</button>
+                                <button class="btn btn-secondary" ng-click="move($index, 'down')" ng-disabled="$index === blocs.length - 1">↓</button>
+                                <button class="btn btn-info" ng-click="toggleDisplay(bloc)">{{bloc.display ? 'Masquer' : 'Afficher'}}</button>
+                                <button class="btn btn-danger" ng-click="deleteBloc($index)">🗑</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div ng-show="showAddQuestion">
+                
+                    <div class="container mt-5">
+                        <h1>Gestion des questions</h1>
+                        <div class="card my-2" ng-repeat="bloc in blocs">
+                            <div class="card-header" ng-click="toggleBlockVisibility(bloc)">
+                                <h5 class="mb-0">{{ bloc.title }}</h5>
+                            </div>
+                            <div class="card-body" ng-show="bloc.isVisible">
+                                <div ng-repeat="question in bloc.questions">
+                                    <div class="phrase-container">
+                    
+                                        <div class="phrase-text" ng-class="{'hidden': !question.isVisible}">
+                                            <input type="text" ng-model="question.content" class="form-control">
+                                        </div>
+                                        <button class="btn btn-secondary" ng-click="moveQuestion(bloc, question, -1)" ng-disabled="$first">↑</button>
+                                        <button class="btn btn-secondary" ng-click="moveQuestion(bloc, question, 1)" ng-disabled="$last">↓</button>
+                                        <button class="btn btn-info" ng-click="toggleQuestionVisibility(question)">{{ question.isVisible ? 'Masquer' : 'Afficher' }}</button>
+                                        <button class="btn btn-danger" ng-click="deleteQuestion(bloc, question.id)">🗑</button>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary mb-3" ng-click="addQuestion(bloc)">Ajouter Question</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success" ng-click="doOK('addQuestion')">Enregistrer</button>
+               
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('.list-group-item-action');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                links.forEach(l => l.classList.remove('active-dark'));
+                this.classList.add('active-dark');
+            });
+        });
+    });
+</script>
+
+<script src= "angular.js">
+</script>
+</body>
+</html>

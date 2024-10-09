@@ -1,0 +1,2297 @@
+[
+    {
+        "id": 1,
+        "country": "Allemagne",
+        "universities": [
+            {
+                "id": 1,
+                "university": "Rheinisch-Westfälische Technische Hochschule Aachen",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "RWTH AACHEN UNIVERSITY - Rheinisch-Westfaelische Technische Hochschule - English (rwth-aachen.de)"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "university": "Hochschule Bremen",
+                "information": [
+                    {
+                        "speciality": [
+                            "0714"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "HSB Hochschule Bremen (hs-bremen.de)"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "university": "Technische Universität Berlin",
+                "information": [
+                    {
+                        "speciality": [
+                            "0713"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "https://www.tu.berlin/en/"
+                    },
+                    {
+                        "speciality": [
+                            "0714"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "https://www.tu.berlin/en/"
+                    },
+                    {
+                        "speciality": [
+                            "0715"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "https://www.tu.berlin/en/"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "university": "Technische Universität Clausthal",
+                "information": [
+                    {
+                        "speciality": [
+                            "071"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "TU Clausthal Website (tu-clausthal.de)"
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "university": "Technische Universität Darmstadt",
+                "information": [
+                    {
+                        "speciality": [
+                            "061"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "https://www.tu-darmstadt.de/index.en.jsp"
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "university": "Technische Universität Hamburg-Harburg",
+                "information": [
+                    {
+                        "speciality": [
+                            "0713"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "TU Clausthal Website (tu-clausthal.de)"
+                    },
+                    {
+                        "speciality": [
+                            "0714"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "TU Clausthal Website (tu-clausthal.de)"
+                    },
+                    {
+                        "speciality": [
+                            "0715"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "TU Clausthal Website (tu-clausthal.de)"
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "university": "Technische Universität München (TUM)",
+                "information": [
+                    {
+                        "speciality": [
+                            "0713"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "TU Clausthal Website (tu-clausthal.de)"
+                    },
+                    {
+                        "speciality": [
+                            "0714"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "TU Clausthal Website (tu-clausthal.de)"
+                    }
+                ]
+            },
+            {
+                "id": 8,
+                "university": "Universität Bremen",
+                "information": [
+                    {
+                        "speciality": [
+                            "071"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Homepage - Universität Bremen (uni-bremen.de)"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "country": "Argentine",
+        "universities": [
+            {
+                "id": 9,
+                "university": "Departamento de Ingeniería Eléctrica y de Computadoras, Universidad Nacional del Sur",
+                "information": [
+                    {
+                        "speciality": [
+                            "0713"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "DIEC - Departamento de Ingeniería Eléctrica y Computadoras (uns.edu.ar)"
+                    }
+                ]
+            },
+            {
+                "id": 10,
+                "university": "Facultad de Agronomia de la Universidad de Buenos Aires, Facultad de Ingeniería de la Universidad de Buenos Aires, Universidad de Buenos Aires",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "Facultad de Agronomía | Universidad de Buenos Aires (uba.ar)"
+                    }
+                ]
+            },
+            {
+                "id": 11,
+                "university": "Facultad de Ciencias Exactas, Físicas y Naturales (FCEFyN), Universidad Nacional de Córdoba",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Facultad de Agronomía | Universidad de Buenos Aires (uba.ar)"
+                    }
+                ]
+            },
+            {
+                "id": 12,
+                "university": "Universidad Nacional de Rosario",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Universidad Nacional de Cuyo (uncuyo.edu.ar)"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "country": "Australie",
+        "universities": [
+            {
+                "id": 13,
+                "university": "University of Sydney",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "The University of Sydney - One of the top universities in Australia"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "country": "Autriche",
+        "universities": [
+            {
+                "id": 14,
+                "university": "Alpen-Adria-Universität Klagenfurt",
+                "information": [
+                    {
+                        "speciality": [
+                            "061"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "https://www.aau.at/"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "country": "Belgique",
+        "universities": [
+            {
+                "id": 15,
+                "university": "KU Leuven",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "http://www.kuleuven.be/english"
+                    }
+                ]
+            },
+            {
+                "id": 16,
+                "university": "Hogeschool PXL",
+                "information": [
+                    {
+                        "speciality": [
+                            "0719"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Hogeschool PXL"
+                    },
+                    {
+                        "speciality": [
+                            "0714"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Hogeschool PXL"
+                    }
+                ]
+            },
+            {
+                "id": 17,
+                "university": "Université Libre de Bruxelles",
+                "information": [
+                    {
+                        "speciality": [
+                            "071"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "http://www.ulb.ac.be/"
+                    }
+                ]
+            },
+            {
+                "id": 18,
+                "university": "Université de Liège",
+                "information": [
+                    {
+                        "speciality": [
+                            "071"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "https://www.ulg.ac.be/"
+                    }
+                ]
+            },
+            {
+                "id": 19,
+                "university": "Université de Mons",
+                "information": [
+                    {
+                        "speciality": [
+                            "071"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Université de Mons (umons.ac.be)"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "country": "Brésil",
+        "universities": [
+            {
+                "id": 20,
+                "university": "Universidade Federal de Santa Catarina (UFSC)",
+                "information": [
+                    {
+                        "speciality": [
+                            "071"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "UEL - Universidade Estadual de Londrina"
+                    },
+                    {
+                        "speciality": [
+                            "071"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "UEL - Universidade Estadual de Londrina"
+                    },
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "UEL - Universidade Estadual de Londrina"
+                    }
+                ]
+            },
+            {
+                "id": 21,
+                "university": "Universidade Federal do Rio Grande do Norte",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "https://ufrn.br/en"
+                    }
+                ]
+            },
+            {
+                "id": 22,
+                "university": "Universidade Federal do Rio de Janeiro (UFRJ)",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "UEL - Universidade Estadual de Londrina"
+                    }
+                ]
+            },
+            {
+                "id": 23,
+                "university": "Universidade Estadual Paulista 'Júlio de Mesquita Filho' (UNESP)",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "UEL - Universidade Estadual de Londrina"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "country": "Cambodge",
+        "universities": [
+            {
+                "id": 24,
+                "university": "Institut de Technologie du Cambodge",
+                "information": [
+                    {
+                        "speciality": [
+                            "071 ",
+                            " 061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "សាលាតិចណូ – INSTITUTE OF TECHNOLOGY OF CAMBODIA (itc.edu.kh)"
+                    }
+                ]
+            },
+            {
+                "id": 25,
+                "university": "Ministry of Water Resources and Meteorology",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Ministry of water resources and meteorology (cambodiameteo.com)"
+                    }
+                ]
+            },
+            {
+                "id": 26,
+                "university": "National Institute of Posts, Telecoms & ICT",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "NICT Asia Center | National Institute of Information and Communications Technology"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "country": "Cameroun",
+        "universities": [
+            {
+                "id": 27,
+                "university": "Ecole Nationale Supérieure Polytechnique (Univ. Yaoundé I), Université de Yaoundé I",
+                "information": [
+                    {
+                        "speciality": [
+                            "071 ",
+                            " 061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "Site web non trouvé"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "country": "Canada",
+        "universities": [
+            {
+                "id": 28,
+                "university": "École Polytechnique de Montréal",
+                "information": [
+                    {
+                        "speciality": [
+                            "071 ",
+                            " 061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "Polytechnique Montréal | Polytechnique Montréal est l’un des plus importants établissements d’enseignement et de recherche en génie au Canada (polymtl.ca)"
+                    },
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "Polytechnique Montréal | Polytechnique Montréal est l’un des plus importants établissements d’enseignement et de recherche en génie au Canada (polymtl.ca)"
+                    }
+                ]
+            },
+            {
+                "id": 29,
+                "university": "Faculté Agronomie - Université Laval, Faculté des sciences et génie - Université Laval, Université Laval",
+                "information": [
+                    {
+                        "speciality": [
+                            "071"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "Faculté des sciences de l'agriculture et de l'alimentation (ulaval.ca)"
+                    },
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "BCI ex-CREPUQ",
+                        "website": "Faculté des sciences de l'agriculture et de l'alimentation (ulaval.ca)"
+                    },
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "Faculté des sciences de l'agriculture et de l'alimentation (ulaval.ca)"
+                    }
+                ]
+            },
+            {
+                "id": 30,
+                "university": "École de Technologie Supérieure (ETS)",
+                "information": [
+                    {
+                        "speciality": [
+                            "071 ",
+                            " 061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "École de technologie supérieure | ÉTS Montréal (etsmtl.ca)"
+                    },
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "École de technologie supérieure | ÉTS Montréal (etsmtl.ca)"
+                    }
+                ]
+            },
+            {
+                "id": 31,
+                "university": "University of Sherbrooke",
+                "information": [
+                    {
+                        "speciality": [
+                            "061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "https://www.usherbrooke.ca/"
+                    },
+                    {
+                        "speciality": [
+                            "071"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "https://www.usherbrooke.ca/"
+                    },
+                    {
+                        "speciality": [
+                            "071 ",
+                            " 061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "https://www.usherbrooke.ca/"
+                    },
+                    {
+                        "speciality": [
+                            "061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "https://www.usherbrooke.ca/"
+                    },
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "BCI ex-CREPUQ",
+                        "website": "https://www.usherbrooke.ca/"
+                    }
+                ]
+            },
+            {
+                "id": 32,
+                "university": "Université du Québec à Chicoutimi",
+                "information": [
+                    {
+                        "speciality": [
+                            "061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "UQAC – Université du Québec à Chicoutimi"
+                    },
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "UQAC – Université du Québec à Chicoutimi"
+                    },
+                    {
+                        "speciality": [
+                            "0612"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "UQAC – Université du Québec à Chicoutimi"
+                    },
+                    {
+                        "speciality": [
+                            "061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "UQAC – Université du Québec à Chicoutimi"
+                    },
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "UQAC – Université du Québec à Chicoutimi"
+                    },
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "UQAC – Université du Québec à Chicoutimi"
+                    }
+                ]
+            },
+            {
+                "id": 33,
+                "university": "Université du Québec à Montréal",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "BCI ex-CREPUQ",
+                        "website": "https://uqam.ca/"
+                    }
+                ]
+            },
+            {
+                "id": 34,
+                "university": "Université du Québec à Trois-Rivières",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "UQAC – Université du Québec à Chicoutimi"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "country": "Chine",
+        "universities": [
+            {
+                "id": 35,
+                "university": "Huazhong University of Science and Technology",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "Huazhong University of Science and Technology (hust.edu.cn)"
+                    }
+                ]
+            },
+            {
+                "id": 36,
+                "university": "Sichuan University",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "https://www.scu.edu.cn"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "country": "Colombie",
+        "universities": [
+            {
+                "id": 37,
+                "university": "Escuela Colombiana de Ingeniería Julio Garavito",
+                "information": [
+                    {
+                        "speciality": [
+                            "071 ",
+                            " 061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "Inicio - Escuela Colombiana de Ingeniería Julio Garavito (escuelaing.edu.co)"
+                    }
+                ]
+            },
+            {
+                "id": 38,
+                "university": "Pontificia Universidad Javeriana",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "Portal Pontificia Universidad Javeriana"
+                    }
+                ]
+            },
+            {
+                "id": 39,
+                "university": "Universidad de Los Andes",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "Universidad de los Andes – Colombia – Sitio oficial (uniandes.edu.co)"
+                    }
+                ]
+            },
+            {
+                "id": 40,
+                "university": "Universidad Nacional de Colombia",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "Universidad Nacional de Colombia (unal.edu.co)"
+                    }
+                ]
+            },
+            {
+                "id": 41,
+                "university": "Universidad Antonio Nariño",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Universidad Antonio Nariño - Inicio (uan.edu.co)"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "country": "Corée,République de",
+        "universities": [
+            {
+                "id": 42,
+                "university": "Korea University of Technology and Education",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "https://www.koreatech.ac.kr/eng.do"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "country": "Dominicaine,République",
+        "universities": [
+            {
+                "id": 43,
+                "university": "Universidad APEC",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "Universidad APEC - UNAPEC"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "country": "Équateur",
+        "universities": [
+            {
+                "id": 44,
+                "university": "Universidad de Cuenca",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "UCUENCA – Sitio web de la Universidad de Cuenca"
+                    }
+                ]
+            },
+            {
+                "id": 45,
+                "university": "Universidad Politécnica Salesiana",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "Portada - home - UPNA (unavarra.es)"
+                    }
+                ]
+            },
+            {
+                "id": 46,
+                "university": "Escuela Politécnica Nacional",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Escuela Politécnica Nacional | La Ciencia al Servicio del Hombre (epn.edu.ec)"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "country": "Espagne",
+        "universities": [
+            {
+                "id": 47,
+                "university": "Universidad Politécnica de Madrid",
+                "information": [
+                    {
+                        "speciality": [
+                            "0713"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "https://www.upm.es/"
+                    },
+                    {
+                        "speciality": [
+                            "0714"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "https://www.upm.es/"
+                    },
+                    {
+                        "speciality": [
+                            "0611"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "https://www.upm.es/"
+                    },
+                    {
+                        "speciality": [
+                            "0713"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "https://www.upm.es/"
+                    },
+                    {
+                        "speciality": [
+                            "0715"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "https://www.upm.es/"
+                    }
+                ]
+            },
+            {
+                "id": 48,
+                "university": "Mondragon Unibertsitatea",
+                "information": [
+                    {
+                        "speciality": [
+                            "071 ",
+                            " 061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "Mondragon Unibertsitatea"
+                    },
+                    {
+                        "speciality": [
+                            "0713"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Mondragon Unibertsitatea"
+                    },
+                    {
+                        "speciality": [
+                            "0716"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Mondragon Unibertsitatea"
+                    }
+                ]
+            },
+            {
+                "id": 49,
+                "university": "Universidad Complutense de Madrid",
+                "information": [
+                    {
+                        "speciality": [
+                            "061"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Universidad Complutense de Madrid (ucm.es)"
+                    }
+                ]
+            },
+            {
+                "id": 50,
+                "university": "Universidad de Deusto",
+                "information": [
+                    {
+                        "speciality": [
+                            "0713"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "http://www.deusto.es"
+                    }
+                ]
+            },
+            {
+                "id": 51,
+                "university": "Universitat Politècnica de València",
+                "information": [
+                    {
+                        "speciality": [
+                            "0714"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "http://www.upv.es/"
+                    }
+                ]
+            },
+            {
+                "id": 52,
+                "university": "Universidad Pública de Navarra",
+                "information": [
+                    {
+                        "speciality": [
+                            "071"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Portada - home - UPNA (unavarra.es)"
+                    }
+                ]
+            },
+            {
+                "id": 53,
+                "university": "Universidad Miguel Hernandez de Elche",
+                "information": [
+                    {
+                        "speciality": [
+                            "0714"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "UMH - Página principal"
+                    }
+                ]
+            },
+            {
+                "id": 54,
+                "university": "Universidad de Sevilla",
+                "information": [
+                    {
+                        "speciality": [
+                            "071"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "https://www.us.es/"
+                    }
+                ]
+            },
+            {
+                "id": 55,
+                "university": "Universitat de València",
+                "information": [
+                    {
+                        "speciality": [
+                            "0714"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "https://www.uv.es/uvweb/college/en/university-valencia-1285845048380.html"
+                    }
+                ]
+            },
+            {
+                "id": 56,
+                "university": "Universidad de Valladolid",
+                "information": [
+                    {
+                        "speciality": [
+                            "0714"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "http://www.uva.es/"
+                    }
+                ]
+            },
+            {
+                "id": 57,
+                "university": "Universidad de Vigo",
+                "information": [
+                    {
+                        "speciality": [
+                            "0714"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Inicio | Universidade de Vigo (uvigo.gal)"
+                    }
+                ]
+            },
+            {
+                "id": 58,
+                "university": "Universidad de Zaragoza",
+                "information": [
+                    {
+                        "speciality": [
+                            "054"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "http://www.unizar.es/information-institution/university-information"
+                    },
+                    {
+                        "speciality": [
+                            "0713"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "http://www.unizar.es/information-institution/university-information"
+                    },
+                    {
+                        "speciality": [
+                            "0714"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "http://www.unizar.es/information-institution/university-information"
+                    }
+                ]
+            },
+            {
+                "id": 59,
+                "university": "Universidad del País Vasco / Euskal Herriko Unibertsitatea",
+                "information": [
+                    {
+                        "speciality": [
+                            "071"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Inicio | Universidade de Vigo (uvigo.gal)"
+                    }
+                ]
+            },
+            {
+                "id": 60,
+                "university": "Universidade da Coruña",
+                "information": [
+                    {
+                        "speciality": [
+                            "0732"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "https://www.udc.gal"
+                    }
+                ]
+            },
+            {
+                "id": 61,
+                "university": "Universitat Politècnica de Catalunya",
+                "information": [
+                    {
+                        "speciality": [
+                            "0713"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "http://www.upc.edu/"
+                    },
+                    {
+                        "speciality": [
+                            "0714"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "http://www.upc.edu/"
+                    },
+                    {
+                        "speciality": [
+                            "0715"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "http://www.upc.edu/"
+                    },
+                    {
+                        "speciality": [
+                            "0714"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "http://www.upc.edu/"
+                    },
+                    {
+                        "speciality": [
+                            "071"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "http://www.upc.edu/"
+                    },
+                    {
+                        "speciality": [
+                            "071"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "http://www.upc.edu/"
+                    },
+                    {
+                        "speciality": [
+                            "061"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "http://www.upc.edu/"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "country": "États-Unis",
+        "universities": [
+            {
+                "id": 62,
+                "university": "Louisiana State University (LSU)",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Welcome to LSU, a top research university | Baton Rouge, La."
+                    }
+                ]
+            },
+            {
+                "id": 63,
+                "university": "Michigan State University",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "http://www.enolagaia.com/JMC.html"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "country": "Fédération De,Russie",
+        "universities": [
+            {
+                "id": 64,
+                "university": "Tomsk Polytechnic University",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "TPU Main"
+                    }
+                ]
+            },
+            {
+                "id": 65,
+                "university": "Saint Petersburg State Institute of Technology",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Saint-Petersburg State Institute of Technology"
+                    }
+                ]
+            },
+            {
+                "id": 66,
+                "university": "Siberian State Aerospace University",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Saint-Petersburg State Institute of Technology"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "country": "Ghana",
+        "universities": [
+            {
+                "id": 67,
+                "university": "Takoradi Technical University",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "http://www.ttu.edu.gh"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "country": "Grèce",
+        "universities": [
+            {
+                "id": 68,
+                "university": "University of West Attica (ex-TEI Piraeus)",
+                "information": [
+                    {
+                        "speciality": [
+                            "071"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "University of West Attica (uniwa.gr)"
+                    },
+                    {
+                        "speciality": [
+                            "0714"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "University of West Attica (uniwa.gr)"
+                    },
+                    {
+                        "speciality": [
+                            "0715"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "University of West Attica (uniwa.gr)"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "country": "Inde",
+        "universities": [
+            {
+                "id": 69,
+                "university": "Indian Institute of Technology Bombay (IIT Bombay)",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Indian Institute of Technology Bombay | IIT Bombay"
+                    }
+                ]
+            },
+            {
+                "id": 70,
+                "university": "Indian Institute of Technology Indore",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Indian Institute of Technology Bombay | IIT Bombay"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "country": "Indonésie",
+        "universities": [
+            {
+                "id": 71,
+                "university": "Institut Teknologi Bandung",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Beranda - Institut Teknologi Bandung (itb.ac.id)"
+                    }
+                ]
+            },
+            {
+                "id": 72,
+                "university": "Institut Pertanian Bogor - Bogor Agricultural University",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Beranda - IPB University"
+                    }
+                ]
+            },
+            {
+                "id": 73,
+                "university": "Universitas Brawijaya",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "http://www.ub.ac.id"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "country": "Irlande",
+        "universities": [
+            {
+                "id": 74,
+                "university": "Dublin City University",
+                "information": [
+                    {
+                        "speciality": [
+                            "0716"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Dublin City University | DCU"
+                    },
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Dublin City University | DCU"
+                    }
+                ]
+            },
+            {
+                "id": 75,
+                "university": "University College Cork",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "http://www.ucc.ie/"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "country": "Italie",
+        "universities": [
+            {
+                "id": 76,
+                "university": "Università degli Studi di Napoli Federico II",
+                "information": [
+                    {
+                        "speciality": [
+                            "061"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Università degli Studi di Napoli Federico II (unina.it)"
+                    },
+                    {
+                        "speciality": [
+                            "061"
+                        ],
+                        "cadres": "Erasmus Stage",
+                        "website": "Università degli Studi di Napoli Federico II (unina.it)"
+                    },
+                    {
+                        "speciality": [
+                            "0713",
+                            "0716"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Università degli Studi di Napoli Federico II (unina.it)"
+                    },
+                    {
+                        "speciality": [
+                            "0713",
+                            "0716"
+                        ],
+                        "cadres": "Erasmus Stage",
+                        "website": "Università degli Studi di Napoli Federico II (unina.it)"
+                    },
+                    {
+                        "speciality": [
+                            "0715"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Università degli Studi di Napoli Federico II (unina.it)"
+                    },
+                    {
+                        "speciality": [
+                            "0715"
+                        ],
+                        "cadres": "Erasmus Stage",
+                        "website": "Università degli Studi di Napoli Federico II (unina.it)"
+                    }
+                ]
+            },
+            {
+                "id": 77,
+                "university": "Politecnico di Milano",
+                "information": [
+                    {
+                        "speciality": [
+                            "0715"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Home: polimi"
+                    },
+                    {
+                        "speciality": [
+                            "0714"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Home: polimi"
+                    }
+                ]
+            },
+            {
+                "id": 78,
+                "university": "Politecnico di Torino",
+                "information": [
+                    {
+                        "speciality": [
+                            "0713"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Home: polimi"
+                    }
+                ]
+            },
+            {
+                "id": 79,
+                "university": "Università degli studi di Cassino e del Lazio Meridionale",
+                "information": [
+                    {
+                        "speciality": [
+                            "0714"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Università di Camerino | Benvenuti sulla home page di Unicam"
+                    }
+                ]
+            },
+            {
+                "id": 80,
+                "university": "Università degli Studi di Firenze",
+                "information": [
+                    {
+                        "speciality": [
+                            "0714"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Università degli Studi di Firenze | UniFI"
+                    },
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Università degli Studi di Firenze | UniFI"
+                    }
+                ]
+            },
+            {
+                "id": 81,
+                "university": "Università degli Studi della Campania Luigi Vanvitelli",
+                "information": [
+                    {
+                        "speciality": [
+                            "071"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Università Vanvitelli (unicampania.it)"
+                    }
+                ]
+            },
+            {
+                "id": 82,
+                "university": "Università degli Studi di Padova",
+                "information": [
+                    {
+                        "speciality": [
+                            "061"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Università di Padova (unipd.it)"
+                    },
+                    {
+                        "speciality": [
+                            "0713"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Università di Padova (unipd.it)"
+                    }
+                ]
+            },
+            {
+                "id": 83,
+                "university": "Università degli Studi di Pavia",
+                "information": [
+                    {
+                        "speciality": [
+                            "0714"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Università degli Studi di Pavia - Il sapere che ti cambia la vita (unipv.it)"
+                    },
+                    {
+                        "speciality": [
+                            "0715"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Università degli Studi di Pavia - Il sapere che ti cambia la vita (unipv.it)"
+                    }
+                ]
+            },
+            {
+                "id": 84,
+                "university": "Università degli Studi di Roma 'Tor Vergata'",
+                "information": [
+                    {
+                        "speciality": [
+                            "061"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Home | Sapienza Università di Roma (uniroma1.it)"
+                    }
+                ]
+            },
+            {
+                "id": 85,
+                "university": "Università degli Studi di Bologna 'Alma Mater Studiorum'",
+                "information": [
+                    {
+                        "speciality": [
+                            "054"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Università di Bologna (unibo.it)"
+                    }
+                ]
+            },
+            {
+                "id": 86,
+                "university": "Università degli Studi di Roma 'La Sapienza'",
+                "information": [
+                    {
+                        "speciality": [
+                            "0541"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "Home | Sapienza Università di Roma (uniroma1.it)"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "country": "Japon",
+        "universities": [
+            {
+                "id": 87,
+                "university": "Kobe University",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "Kobe University (kobe-u.ac.jp)"
+                    }
+                ]
+            },
+            {
+                "id": 88,
+                "university": "Kyoto University of Advanced Science",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "https://www.kuas.ac.jp/en/"
+                    },
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "https://www.kuas.ac.jp/en/"
+                    }
+                ]
+            },
+            {
+                "id": 89,
+                "university": "Okayama University",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "Okayama University (okayama-u.ac.jp)"
+                    }
+                ]
+            },
+            {
+                "id": 90,
+                "university": "Tohoku University",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "Tohoku University"
+                    }
+                ]
+            },
+            {
+                "id": 91,
+                "university": "Tokyo City University",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "Tohoku University"
+                    }
+                ]
+            },
+            {
+                "id": 92,
+                "university": "National Institute of Informatics",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "https://www.nii.ac.jp/en/"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "country": "Liban",
+        "universities": [
+            {
+                "id": 93,
+                "university": "Université Saint-Joseph",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "Université Saint-Esprit de Kaslik | Home (usek.edu.lb)"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "country": "Malaisie",
+        "universities": [
+            {
+                "id": 94,
+                "university": "Universiti Malaya (UM)",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Welcome to Universiti Malaya (um.edu.my)"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "country": "Maroc",
+        "universities": [
+            {
+                "id": 95,
+                "university": "Ecole Nationale Supérieure d'Arts et Métiers (Mohammed V Rabat), Université Mohammed V Rabat",
+                "information": [
+                    {
+                        "speciality": [
+                            "071 ",
+                            " 061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "home v1 | École Nationale Supérieure d'Arts et Métiers (um5.ac.ma)"
+                    }
+                ]
+            },
+            {
+                "id": 96,
+                "university": "Ecole Hassania des Travaux Publics",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "Ecole Hassania Des Travaux Publics (ehtp.ac.ma)"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "country": "Mexique",
+        "universities": [
+            {
+                "id": 97,
+                "university": "Universidad Autónoma de Guadalajara",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Universidad Autónoma de Guadalajara | UAG"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "country": "Norvège",
+        "universities": [
+            {
+                "id": 98,
+                "university": "UiT Norges arktiske universitet",
+                "information": [
+                    {
+                        "speciality": [
+                            "061"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "UiT Norges arktiske universitet | UiT"
+                    },
+                    {
+                        "speciality": [
+                            "071"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "UiT Norges arktiske universitet | UiT"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "country": "Pays-Bas",
+        "universities": [
+            {
+                "id": 99,
+                "university": "Technische Universiteit Delft",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "http://www.tudelft.nl/en/"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 31,
+        "country": "Pologne",
+        "universities": [
+            {
+                "id": 100,
+                "university": "Warsaw University of Technology",
+                "information": [
+                    {
+                        "speciality": [
+                            "0716"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "https://www.pw.edu.pl/"
+                    },
+                    {
+                        "speciality": [
+                            "0716"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "https://www.pw.edu.pl/"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 32,
+        "country": "Royaume-Uni",
+        "universities": [
+            {
+                "id": 101,
+                "university": "Cranfield University",
+                "information": [
+                    {
+                        "speciality": [
+                            "071 ",
+                            " 061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "Welcome to Cranfield University"
+                    },
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "Welcome to Cranfield University"
+                    }
+                ]
+            },
+            {
+                "id": 102,
+                "university": "Manchester Metropolitan University",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Stages",
+                        "website": "http://www.mmu.ac.uk"
+                    }
+                ]
+            },
+            {
+                "id": 103,
+                "university": "Coventry University",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Coventry University"
+                    }
+                ]
+            },
+            {
+                "id": 104,
+                "university": "Imperial College London",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Private Equity Programme | Imperial Executive Education"
+                    }
+                ]
+            },
+            {
+                "id": 105,
+                "university": "University of Birmingham",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "http://www.birmingham.ac.uk/index.aspx"
+                    }
+                ]
+            },
+            {
+                "id": 106,
+                "university": "The University of Manchester",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "https://www.manchester.ac.uk"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 33,
+        "country": "Serbie",
+        "universities": [
+            {
+                "id": 107,
+                "university": "University of Belgrade",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "http://www.bg.ac.rs/"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 34,
+        "country": "Suède",
+        "universities": [
+            {
+                "id": 108,
+                "university": "Uppsala universitet",
+                "information": [
+                    {
+                        "speciality": [
+                            "0533"
+                        ],
+                        "cadres": "Erasmus Etudes",
+                        "website": "http://www.uu.se"
+                    }
+                ]
+            },
+            {
+                "id": 109,
+                "university": "Chalmers tekniska högskola",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "https://www.chalmers.se/"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 35,
+        "country": "Suisse",
+        "universities": [
+            {
+                "id": 110,
+                "university": "BFH Berner Fachhochschule",
+                "information": [
+                    {
+                        "speciality": [
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "Berner Fachhochschule | vielfältig und praxisnah (bfh.ch)"
+                    },
+                    {
+                        "speciality": [
+                            "071"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "Berner Fachhochschule | vielfältig und praxisnah (bfh.ch)"
+                    }
+                ]
+            },
+            {
+                "id": 111,
+                "university": "FHNW Fachhochschule Nordwestschweiz",
+                "information": [
+                    {
+                        "speciality": [
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "FHNW: Wo sich die Zukunft bildet | FHNW"
+                    },
+                    {
+                        "speciality": [
+                            "071"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "FHNW: Wo sich die Zukunft bildet | FHNW"
+                    }
+                ]
+            },
+            {
+                "id": 112,
+                "university": "Université de Neuchâtel",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "Université de Neuchâtel (unine.ch)"
+                    }
+                ]
+            },
+            {
+                "id": 113,
+                "university": "École Polytechnique Fédérale (EPF) Lausanne",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "EPFL"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 36,
+        "country": "Taïwan",
+        "universities": [
+            {
+                "id": 114,
+                "university": "National Cheng Kung University",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "https://web.ncku.edu.tw/index.php?Lang=en"
+                    }
+                ]
+            },
+            {
+                "id": 115,
+                "university": "National Tsing Hua University",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "https://web.archive.org/web/20080930105433/http://cfcc.nthu.edu.tw/cfcc/"
+                    }
+                ]
+            },
+            {
+                "id": 116,
+                "university": "National Taiwan University",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "http://www.ntu.edu.tw/english/"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 37,
+        "country": "Thaïlande",
+        "universities": [
+            {
+                "id": 117,
+                "university": "Chulalongkorn University",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Chulalongkorn University"
+                    }
+                ]
+            },
+            {
+                "id": 118,
+                "university": "King Mongkut's Institute of Technology Ladkrabang",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง | KMITL"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 38,
+        "country": "Tunisie",
+        "universities": [
+            {
+                "id": 119,
+                "university": "Ecole Nationale d'Ingenieur de Tunis",
+                "information": [
+                    {
+                        "speciality": [
+                            "071 ",
+                            " 061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "ENIT – Ecole Nationale d’Ingénieurs de Tunis (rnu.tn)"
+                    }
+                ]
+            },
+            {
+                "id": 120,
+                "university": "Institut National des Sciences Appliquées et de Technologie, Université de Carthage",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Institut National Agronomique de Tunisie (INAT) |"
+                    },
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Free Mover (établissement partenaire)",
+                        "website": "Institut National Agronomique de Tunisie (INAT) |"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 39,
+        "country": "Viet Nam",
+        "universities": [
+            {
+                "id": 121,
+                "university": "Institut Polytechnique de Ho Chi Minh Ville",
+                "information": [
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "Etude Ingénieur Vietnam - Coopération Vietnamienne Et Française (pfiev.org)"
+                    },
+                    {
+                        "speciality": [
+                            "071",
+                            "061"
+                        ],
+                        "cadres": "Bilatéral Etudes",
+                        "website": "Etude Ingénieur Vietnam - Coopération Vietnamienne Et Française (pfiev.org)"
+                    }
+                ]
+            },
+            {
+                "id": 122,
+                "university": "University of Science and Technology of Hanoi",
+                "information": [
+                    {
+                        "speciality": [
+                            "071"
+                        ],
+                        "cadres": "Double diplôme",
+                        "website": "http://www.usth.edu.vn"
+                    }
+                ]
+            }
+        ]
+    }
+]

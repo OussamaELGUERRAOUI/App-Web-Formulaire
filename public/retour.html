@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="myCtrl">
+<head>
+  <meta charset="UTF-8">
+  <title>Le retour des expériences</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="../style/styleRet.css">
+  <style>
+    .custom-card {
+      margin-top: 100px;
+    }
+    .custom-question {
+      border: 1px solid pink;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    .custom-container {
+  width: 100%; /* Assure que le conteneur prend toute la largeur disponible */
+  display: flex; /* Utilise Flexbox pour aligner les éléments enfants */
+  flex-wrap: wrap; /* Permet aux éléments enfants de passer à la ligne si nécessaire */
+  justify-content: flex-start; /* Aligne les éléments enfants à gauche */
+  gap: 20px; /* Espace entre les éléments enfants */
+}
+
+.my-2 {
+  flex-basis: calc(33.33% - 20px); /* Définit la largeur de chaque bloc (ajustez en fonction de vos besoins) */
+}
+  </style>
+</head>
+<body>
+  <div class="testbox">
+    <form ng-submit="apply()">
+      <div class="container">
+        <label for="pays">Pays destination</label>
+        <select id="pays" ng-model="selectedPays" ng-options="country.country as country.country for country in universitiesByCountry" ng-change="updateSelectedPays()">
+          <option value=""></option>
+        </select>
+
+        <label for="university">University :</label>
+        <select id="university" ng-model="selectedEcole" ng-options="university.university for university in ecolesList">
+          
+        </select>
+
+        <div class="btn-block">
+          <button type="submit">APPLY</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="testbox" ng-if="blocs.length > 0">
+    <div class="container">
+      <div class="card my-2 custom-card" ng-repeat="bloc in blocs" style="text-align: left;">
+        <div class="card-header" ng-click="toggleBlockVisibility(bloc)">
+          <h5 class="mb-0">{{ bloc.title }}</h5>
+        </div>
+        <div class="card-body" ng-show="bloc.isVisible">
+          <div ng-repeat="question in bloc.questions" class="text-left">
+            <h6 class="mb-0 text-dark" ng-click="toggleQuestionVisibility(question)">{{ question.content }}</h6>
+            <div class="collapse" ng-class="{ 'show': question.isVisible }">
+              <div class="card card-body custom-question">
+                <div ng-repeat="reponse in question.reponses" class="text-left">
+                  <a>{{reponse}}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script>
+    angular.module('myApp', [])
+      .controller('myCtrl', function ($scope, $http) {
+        $scope.universitiesByCountry = [];  // Pour stocker les données JSON
+        $scope.ecolesList = [];
+
+        /*$scope.blocs =[
+            {
+              title: 'Bloc 1',
+              isVisible: false,
+              questions: [
+                {  content: 'Question 1.1', isVisible: false, reponses: ["Réponse 3.1", "Réponse 3.2", "Réponse 3.3"] },
+                {  content: 'Question 1.2', isVisible: false, reponses: ["Réponse 3.1", "Réponse 3.2", "Réponse 3.3"] }
+              ]
+            },
+            {
+              title: 'Bloc 2',
+              isVisible: false,
+              questions: [
+                {  content: 'Question 2.1', isVisible: false, reponses: ["Réponse 3.1", "Réponse 3.2", "Réponse 3.3"] },
+                {  content: 'Question 2.2', isVisible: false, reponses: ["Réponse 3.1", "Réponse 3.2", "Réponse 3.3"] }
+              ]
+            },
+            {
+              title: 'Bloc 3',
+              isVisible: false,
+              questions: [
+                {  content: 'Question 3.1', isVisible: false, reponses: ["Réponse 3.1", "Réponse 3.2", "Réponse 3.3"] },
+                {  content: 'Question 3.2', isVisible: false, reponses: ["Réponse 3.1", "Réponse 3.2", "Réponse 3.3"] }
+              ]
+            }
+          ];*/
+
+
+        $http.get('/data/informationecole.json')
+          .then(function (response) {
+              $scope.universitiesByCountry = response.data;
+              console.log(response.data);
+          }, function (error) {
+              console.error('Error fetching data:', error);
+          });
+
+        $scope.updateSelectedPays = function () {
+                console.log("Pays sélectionné :", $scope.selectedPays);
+                var selectedCountry = $scope.selectedPays;
+                var countryObj = $scope.universitiesByCountry.find(function (country) {
+                    return country.country === selectedCountry;
+                });
+
+                console.log("Pays sélectionné2 :", countryObj);
+
+                // Si un pays correspondant est trouvé, met à jour la liste des universités
+                if (countryObj) {
+                    $scope.ecolesList = countryObj.universities;
+                    console.log("Pays sélectionné3 :", $scope.ecolesList);
+                } else {
+                    $scope.ecolesList = []; // Si aucun pays correspondant n'est trouvé, efface la liste des universités
+                }
+
+            };
+
+
+        /*$http.get('appPrincipale/retour').then(function (response) {
+          $scope.paysList = response.data.paysList;
+          $scope.ecolesList = response.data.ecolesList;
+        });*/
+
+        $scope.apply = function () {
+          $http.post('appPrincipale/retour', {
+            pays: $scope.selectedPays,
+            university: $scope.selectedEcole
+          }).then(function (response) {
+            $scope.blocs = response.data;
+          });
+        };
+
+        $scope.toggleBlockVisibility = function (bloc) {
+          bloc.isVisible = !bloc.isVisible;
+        };
+
+        $scope.toggleQuestionVisibility = function (question) {
+          question.isVisible = !question.isVisible;
+        };
+      });
+  </script>
+</body>
+</html>
