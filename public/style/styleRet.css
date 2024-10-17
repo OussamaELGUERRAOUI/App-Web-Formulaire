@@ -210,3 +210,59 @@ select{
         content: '+';
     }
 }
+.custom-question {
+    border: 1px solid pink;
+    padding: 12px;
+    margin-top: 8px;
+    background-color: #f9f9f9; /* Ajout d'un fond léger pour la question */
+    border-radius: 8px;
+  }
+  
+  /*.card-header h5 {
+    cursor: pointer;
+    background-color: #c5b9b9db; /* Couleur d'arrière-plan */
+    /*padding: 10px;
+    border-radius: 5px;
+    color: gray; /* Couleur du texte en gris */
+    /*transition: background-color 0.3s ease, color 0.3s ease; /* Ajout d'une transition pour la couleur */
+  /*}/*
+  
+  .card-header h5:hover {
+    background-color: #b7b3b3fe; /* Couleur de fond au survol */
+    /*color: darkgray; /* Couleur gris foncé au survol */
+  /*}*/
+  
+  h6.mb-0.text-dark {
+    cursor: pointer;
+    color: #333;
+    font-weight: 500;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #e6f2ff; /* Couleur d'arrière-plan pour les questions */
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  h6.mb-0.text-dark:hover {
+    background-color: #b3d1ff; /* Couleur lorsqu'on passe la souris sur la question */
+  }
+  
+  .card-body {
+    padding: 12px;
+    border-left: 3px solid #ffcccc; /* Bordure pour styliser les réponses */
+    margin-top: 10px;
+  }
+  
+  .collapse {
+    transition: height 0.3s ease; /* Animation fluide pour les réponses */
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Ajout d'un soulignement au survol */
+  }

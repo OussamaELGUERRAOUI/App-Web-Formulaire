@@ -1,3 +1,12 @@
 [
-    
+  {
+    "nom": "dze",
+    "prenom": "dz",
+    "departement": "1",
+    "semestre": "s7",
+    "date_mobilite": "2001-10-11T22:00:00.000Z",
+    "duree_mobilite": "12",
+    "email": "dze@gmail.com",
+    "idEtudiant": 1
+  }
 ]

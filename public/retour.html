@@ -34,17 +34,18 @@
     <form ng-submit="apply()">
       <div class="container">
         <label for="pays">Pays destination</label>
-        <select id="pays" ng-model="selectedPays" ng-options="country.country as country.country for country in universitiesByCountry" ng-change="updateSelectedPays()">
-          <option value=""></option>
-        </select>
+        <select id="pays" ng-model="selectedPays" ng-options="country.country as country.country for country in universitiesByCountry"
+                ng-change="updateSelectedPays()">
+                <option value=""></option>
+          </select>
 
         <label for="university">University :</label>
         <select id="university" ng-model="selectedEcole" ng-options="university.university for university in ecolesList">
-          
-        </select>
+          <option value=""></option>
+      </select>
 
         <div class="btn-block">
-          <button type="submit">APPLY</button>
+          <button ng-click="confimer()">APPLY</button>
         </div>
       </div>
     </form>
@@ -54,15 +55,17 @@
     <div class="container">
       <div class="card my-2 custom-card" ng-repeat="bloc in blocs" style="text-align: left;">
         <div class="card-header" ng-click="toggleBlockVisibility(bloc)">
-          <h5 class="mb-0">{{ bloc.title }}</h5>
+          <h5 class="mb-0">{{ bloc.name }}</h5> <!-- Titre du bloc cliquable -->
         </div>
         <div class="card-body" ng-show="bloc.isVisible">
           <div ng-repeat="question in bloc.questions" class="text-left">
-            <h6 class="mb-0 text-dark" ng-click="toggleQuestionVisibility(question)">{{ question.content }}</h6>
+            <h6 class="mb-0 text-dark" ng-click="toggleQuestionVisibility(question)">
+              {{ question.question }}
+            </h6>
             <div class="collapse" ng-class="{ 'show': question.isVisible }">
               <div class="card card-body custom-question">
-                <div ng-repeat="reponse in question.reponses" class="text-left">
-                  <a>{{reponse}}</a>
+                <div ng-repeat="reponse in question.reponse" class="text-left">
+                  <a>{{reponse}}</a> <!-- Réponses stylisées -->
                 </div>
               </div>
             </div>
@@ -70,7 +73,7 @@
         </div>
       </div>
     </div>
-  </div>
+</div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
   <script>
@@ -78,75 +81,54 @@
       .controller('myCtrl', function ($scope, $http) {
         $scope.universitiesByCountry = [];  // Pour stocker les données JSON
         $scope.ecolesList = [];
+        $scope.blocs = [];
 
-        /*$scope.blocs =[
-            {
-              title: 'Bloc 1',
-              isVisible: false,
-              questions: [
-                {  content: 'Question 1.1', isVisible: false, reponses: ["Réponse 3.1", "Réponse 3.2", "Réponse 3.3"] },
-                {  content: 'Question 1.2', isVisible: false, reponses: ["Réponse 3.1", "Réponse 3.2", "Réponse 3.3"] }
-              ]
-            },
-            {
-              title: 'Bloc 2',
-              isVisible: false,
-              questions: [
-                {  content: 'Question 2.1', isVisible: false, reponses: ["Réponse 3.1", "Réponse 3.2", "Réponse 3.3"] },
-                {  content: 'Question 2.2', isVisible: false, reponses: ["Réponse 3.1", "Réponse 3.2", "Réponse 3.3"] }
-              ]
-            },
-            {
-              title: 'Bloc 3',
-              isVisible: false,
-              questions: [
-                {  content: 'Question 3.1', isVisible: false, reponses: ["Réponse 3.1", "Réponse 3.2", "Réponse 3.3"] },
-                {  content: 'Question 3.2', isVisible: false, reponses: ["Réponse 3.1", "Réponse 3.2", "Réponse 3.3"] }
-              ]
-            }
-          ];*/
+        
 
-
-        $http.get('/data/informationecole.json')
+        $http.get('/informationecole.json')
           .then(function (response) {
               $scope.universitiesByCountry = response.data;
-              console.log(response.data);
+              //console.log($scope.universitiesByCountry);
           }, function (error) {
               console.error('Error fetching data:', error);
           });
 
         $scope.updateSelectedPays = function () {
-                console.log("Pays sélectionné :", $scope.selectedPays);
-                var selectedCountry = $scope.selectedPays;
-                var countryObj = $scope.universitiesByCountry.find(function (country) {
-                    return country.country === selectedCountry;
-                });
+            console.log("Pays sélectionné :", $scope.selectedPays);
+            var selectedCountry = $scope.selectedPays;
+            var countryObj = $scope.universitiesByCountry.find(function (country) {
+                return country.country === selectedCountry;
+            });
 
-                console.log("Pays sélectionné2 :", countryObj);
+            console.log("Pays sélectionné2 :", countryObj);
 
-                // Si un pays correspondant est trouvé, met à jour la liste des universités
-                if (countryObj) {
-                    $scope.ecolesList = countryObj.universities;
-                    console.log("Pays sélectionné3 :", $scope.ecolesList);
-                } else {
-                    $scope.ecolesList = []; // Si aucun pays correspondant n'est trouvé, efface la liste des universités
-                }
+            // Si un pays correspondant est trouvé, met à jour la liste des universités
+            if (countryObj) {
+                $scope.ecolesList = countryObj.universities;
+                console.log("Pays sélectionné3 :", $scope.ecolesList);
+            } else {
+                $scope.ecolesList = []; // Si aucun pays correspondant n'est trouvé, efface la liste des universités
+            }
 
-            };
+        };
 
+        
+        $scope.confimer = function () {
+          console.log("Pays sélectionné :", $scope.selectedPays);
+          console.log("Ecole sélectionnée :", $scope.selectedEcole.id);
 
-        /*$http.get('appPrincipale/retour').then(function (response) {
-          $scope.paysList = response.data.paysList;
-          $scope.ecolesList = response.data.ecolesList;
-        });*/
-
-        $scope.apply = function () {
-          $http.post('appPrincipale/retour', {
+          var data = {
             pays: $scope.selectedPays,
-            university: $scope.selectedEcole
-          }).then(function (response) {
-            $scope.blocs = response.data;
-          });
+            university: $scope.selectedEcole.id
+          };
+
+          $http.get('/informationEtudiant', {params : data})
+            .then(function (response) {
+                $scope.blocs = response.data;
+                console.log($scope.blocs);
+            }, function (error) {
+                console.error('Error fetching data:', error);
+            });
         };
 
         $scope.toggleBlockVisibility = function (bloc) {
@@ -157,6 +139,8 @@
           question.isVisible = !question.isVisible;
         };
       });
+
+
   </script>
 </body>
 </html>
