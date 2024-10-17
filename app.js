@@ -120,31 +120,7 @@ app.post('/submit', (req, res) => {
     });
 });
 
-let transformToList = (obj) => {
-    var result = [];
-    for (let key in obj) {
-        // Si la valeur est un tableau, on prend la première valeur
-        if (Array.isArray(obj[key])) {
-            var object="";
-            for(var i=0; i<obj[key].length; i++){
-                object = object + obj[key][i] ;
-                if(i<obj[key].length-1){
-                    object = object + ", ";
-                }
-            }
-            result.push({
-                question: key,
-                reponse: [object]  // On prend le premier élément du tableau
-            });
-        } else {
-            result.push({
-                question: key,
-                reponse: [obj[key]]
-            });
-        }
-    }
-    return result;
-};
+
 
 
 app.get('/informationEtudiant', (req, res) => {
@@ -236,83 +212,6 @@ app.get('/informationEtudiant', (req, res) => {
 
 });
 
-app.get('/informationEtudiante', (req, res) => {
-    const idUniversity = req.query.university;
-    const selectedEcole = req.query.pays;
-
-    var informationecole = informationEcole.find(function (element) {
-        return element.country == selectedEcole;
-    }).universities.find(function (element) {
-        return element.id == idUniversity;
-    }).information[0];
-
-    const transformToListInf = [];
-    for (let key in informationecole) {
-        // Si la valeur est un tableau, on prend la première valeur
-        if (Array.isArray(informationecole[key])) {
-            let object = "";
-            for (var i = 0; i < informationecole[key].length; i++) {
-                object += informationecole[key][i];
-                if (i < informationecole[key].length - 1) {
-                    object += ", ";
-                }
-            }
-            transformToListInf.push({
-                question: key,
-                reponse: [object]  // On prend le premier élément du tableau
-            });
-        } else {
-            transformToListInf.push({
-                question: key,
-                reponse: [informationecole[key]]
-            });
-        }
-    }
-
-    // Gestion de blockInf
-    var blockInf = blocsData[0];
-
-    // Réinitialiser les réponses de blockInf
-    for (var i = 0; i < blockInf.questions.length; i++) {
-        blockInf.questions[i].reponse = []; // Réinitialiser les réponses
-    }
-
-    // Remplir les réponses dans blockInf
-    for (var i = 0; i < blockInf.questions.length; i++) {
-        var reponseTemp = [];
-        if (blockInf.questions[i].reponse.length > 0) {
-            for (var j = 0; j < blockInf.questions[i].reponse.length; j++) {
-                if (blockInf.questions[i].reponse[j].universityId === idUniversity) {
-                    reponseTemp.push(blockInf.questions[i].reponse[j].response);
-                }
-            }
-            blockInf.questions[i].reponse = reponseTemp;
-        }
-    }
-
-    // Ajouter les nouvelles réponses
-    blockInf.questions = blockInf.questions.concat(transformToListInf);
-
-    // Gestion des autres blocs
-    var blocs = blocsData.slice(1);
-    for (var i = 0; i < blocs.length; i++) {
-        for (var j = 0; j < blocs[i].questions.length; j++) {
-            var reponseTemp = [];
-            if (blocs[i].questions[j].reponse.length > 0) {
-                for (var k = 0; k < blocs[i].questions[j].reponse.length; k++) {
-                    if (blocs[i].questions[j].reponse[k].universityId === idUniversity) {
-                        reponseTemp.push(blocs[i].questions[j].reponse[k].response);
-                    }
-                }
-                blocs[i].questions[j].reponse = reponseTemp;
-            }
-        }
-    }
-
-    // Envoyer les données
-    let data = [...[blockInf], ...blocs];
-    res.send(data);
-});
 
 
 // Start the server

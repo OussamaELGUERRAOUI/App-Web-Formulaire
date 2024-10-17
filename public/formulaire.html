@@ -159,7 +159,7 @@
 
             $scope.blocs = [];
 
-            $http.get('/informationecole.json')
+            $http.get('/informationEcole.json')
                 .then(function (response) {
                     $scope.universitiesByCountry = response.data;
                     //console.log($scope.universitiesByCountry);
