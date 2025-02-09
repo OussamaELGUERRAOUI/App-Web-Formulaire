@@ -22,11 +22,11 @@ let informationEcole = require('./data/informationEcole.json');
 
 // connexion au base de donnée
 const db = mysql.createConnection({
-    host: 'localhost', // Changez cela selon votre configuration
-    user: 'root',      // Changez avec votre utilisateur MySQL
-    password: 'root',      // Ajoutez votre mot de passe MySQL
-    database: 'questionnaire', // Assurez-vous d'avoir créé cette base de données
-    port : 8001
+    host: 'sql307.infinityfree.com', // Changez cela selon votre configuration
+    user: 'if0_38280443',      // Changez avec votre utilisateur MySQL
+    password: 'Elguouss2001',      // Ajoutez votre mot de passe MySQL
+    database: 'if0_38280443_questionnaire', // Assurez-vous d'avoir créé cette base de données
+    port : 3306
 });
 
 db.connect(err => {
