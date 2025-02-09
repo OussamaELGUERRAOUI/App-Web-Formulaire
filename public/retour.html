@@ -65,7 +65,7 @@
             <div class="collapse" ng-class="{ 'show': question.isVisible }">
               <div class="card card-body custom-question">
                 <div ng-repeat="reponse in question.reponse" class="text-left">
-                  <a>{{reponse}}</a> <!-- Réponses stylisées -->
+                  <a>-- {{reponse}}</a> <!-- Réponses stylisées -->
                 </div>
               </div>
             </div>
@@ -122,8 +122,9 @@
             university: $scope.selectedEcole.id
           };
 
-          $http.get('/informationEtudiant', {params : data})
+          $http.get('/api/etudiant', {params : data})
             .then(function (response) {
+                console.log("api");
                 $scope.blocs = response.data;
                 console.log($scope.blocs);
             }, function (error) {

@@ -1,175 +1,181 @@
 [
-    {
-        "idBlock": 0,
-        "name": "Fiche UNIVERSITE",
-        "questions": [
-            {
-                "idQuestion": 1,
-                "question": "ville",
-                "reponse": []
-            },
-            {
-                "idQuestion": 2,
-                "question": "type de séjour",
-                "reponse": []
-            },
-            {
-                "idQuestion": 3,
-                "question": "Langue d'enseignement",
-                "reponse": []
-            },
-            {
-                "idQuestion": 4,
-                "question": "Dates approximatives des épreuves normales et de rattrapage",
-                "reponse": []
-            },
-            {
-                "idQuestion": 5,
-                "question": "moyenne requise pour 1 ou 2 session",
-                "reponse": []
-            },
-            {
-                "idQuestion": 6,
-                "question": "les exigences linguistiques (le niveau de langue requis pour les cours...)",
-                "reponse": []
-            }
-        ]
-    },
-    {
-        "idBlock": 1,
-        "name": "Fiche SEJOUR",
-        "questions": [
-            {
-                "idQuestion": 11,
-                "question": "La satification globale de votre séjour en mobilité international.",
-                "reponse": []
-            }
-        ]
-    },
-    {
-        "idBlock": 2,
-        "name": "Préparation du séjour",
-        "questions": [
-            {
-                "idQuestion": 21,
-                "question": "Les aides financiers à la mobilité",
-                "reponse": []
-            },
-            {
-                "idQuestion": 22,
-                "question": "Les démarches administratives à faire avant le départ",
-                "reponse": []
-            },
-            {
-                "idQuestion": 23,
-                "question": "Les recommandations pour la préparation du voyage vers cette destination, provenant des étudiants ayant déjà séjourné à cette destination",
-                "reponse": []
-            }
-        ]
-    },
-    {
-        "idBlock": 3,
-        "name": "Arrivée à l'université étrangère",
-        "questions": [
-            {
-                "idQuestion": 31,
-                "question": "Les démarches administratives à faire à l'arrivée.",
-                "reponse": []
-            },
-            {
-                "idQuestion": 32,
-                "question": "La qualité d'accueil et l'aide de l'établissement étranger.",
-                "reponse": []
-            },
-            {
-                "idQuestion": 33,
-                "question": "Les difficultés rencontrées à l'arrivée.",
-                "reponse": []
-            },
-            {
-                "idQuestion": 34,
-                "question": "Les ressources les plus précieuses pour l'orientation à l'arrivée (la carte de transport en commun et les centres d'informations touristiques, etc.).",
-                "reponse": []
-            }
-        ]
-    },
-    {
-        "idBlock": 4,
-        "name": "Logement",
-        "questions": [
-            {
-                "idQuestion": 41,
-                "question": "Les démarches pour trouver un logement.",
-                "reponse": []
-            },
-            {
-                "idQuestion": 42,
-                "question": "Des suggestions concernant les résidences étudiantes à proximité de l'université.",
-                "reponse": []
-            }
-        ]
-    },
-    {
-        "idBlock": 6,
-        "name": "Expérience académique",
-        "questions": [
-            {
-                "idQuestion": 61,
-                "question": "La difficulté à obtenir les cours désirés.",
-                "reponse": []
-            },
-            {
-                "idQuestion": 62,
-                "question": "Les cours proposés.",
-                "reponse": []
-            },
-            {
-                "idQuestion": 63,
-                "question": "Des recommandations concernant le choix des cours.",
-                "reponse": []
-            },
-            {
-                "idQuestion": 64,
-                "question": "Les connaissances linguistiques pour suivre les cours.",
-                "reponse": []
-            },
-            {
-                "idQuestion": 65,
-                "question": "Les méthodes d'enseignement/de travail des professeurs par rapport à l'ENSEEIHT.",
-                "reponse": []
-            },
-            {
-                "idQuestion": 66,
-                "question": "La charge de travail par rapport à l'ENSEEIHT.",
-                "reponse": []
-            }
-        ]
-    },
-    {
-        "idBlock": 7,
-        "name": "Activités scolaires et parascolaires",
-        "questions": [
-            {
-                "idQuestion": 71,
-                "question": "Les activités parascolaires offertes par l'université aux étudiants internationaux.",
-                "reponse": []
-            },
-            {
-                "idQuestion": 72,
-                "question": "Les activités culturelles ou touristiques pour les soirées et fins de semaines.",
-                "reponse": []
-            }
-        ]
-    },
-    {
-        "idBlock": 8,
-        "name": "Conseils pour les futurs étudiants",
-        "questions": [
-            {
-                "idQuestion": 81,
-                "question": "Des conseils pour les futurs étudiants à la mobilité.",
-                "reponse": []
-            }
-        ]
-    }
+  {
+    "idBlock": 0,
+    "name": "Fiche UNIVERSITE",
+    "questions": [
+      {
+        "idQuestion": 1,
+        "question": "ville",
+        "reponse": []
+      },
+      {
+        "idQuestion": 2,
+        "question": "Cadres",
+        "reponse": []
+      },
+      {
+        "idQuestion": 3,
+        "question": "Langue d'enseignement",
+        "reponse": []
+      },
+      {
+        "idQuestion": 4,
+        "question": "Résidence universitaire",
+        "reponse": []
+      },
+      { 
+        "idQuestion": 5,
+        "question": "Dates des épreuves", 
+        "reponse": []
+
+      },
+      {
+        "idQuestion": 6,
+        "question": "moyenne requise pour 1 ou 2 session",
+        "reponse": []
+      },
+      {
+        "idQuestion": 7,
+        "question": "les exigences linguistiques (le niveau de langue requis pour les cours...)",
+        "reponse": []
+      }
+    ]
+  },
+  {
+    "idBlock": 1,
+    "name": "Fiche SEJOUR",
+    "questions": [
+      {
+        "idQuestion": 11,
+        "question": "La satification globale de votre séjour en mobilité international.",
+        "reponse": []
+      }
+    ]
+  },
+  {
+    "idBlock": 2,
+    "name": "Préparation du séjour",
+    "questions": [
+      {
+        "idQuestion": 21,
+        "question": "Les aides financiers à la mobilité",
+        "reponse": []
+      },
+      {
+        "idQuestion": 22,
+        "question": "Les démarches administratives à faire avant le départ",
+        "reponse": []
+      },
+      {
+        "idQuestion": 23,
+        "question": "Les recommandations pour la préparation du voyage vers cette destination, provenant des étudiants ayant déjà séjourné à cette destination",
+        "reponse": []
+      }
+    ]
+  },
+  {
+    "idBlock": 3,
+    "name": "Arrivée à l'université étrangère",
+    "questions": [
+      {
+        "idQuestion": 31,
+        "question": "Les démarches administratives à faire à l'arrivée.",
+        "reponse": []
+      },
+      {
+        "idQuestion": 32,
+        "question": "La qualité d'accueil et l'aide de l'établissement étranger.",
+        "reponse": []
+      },
+      {
+        "idQuestion": 33,
+        "question": "Les difficultés rencontrées à l'arrivée.",
+        "reponse": []
+      },
+      {
+        "idQuestion": 34,
+        "question": "Les ressources les plus précieuses pour l'orientation à l'arrivée (la carte de transport en commun et les centres d'informations touristiques, etc.).",
+        "reponse": []
+      }
+    ]
+  },
+  {
+    "idBlock": 4,
+    "name": "Logement",
+    "questions": [
+      {
+        "idQuestion": 41,
+        "question": "Les démarches pour trouver un logement.",
+        "reponse": []
+      },
+      {
+        "idQuestion": 42,
+        "question": "Des suggestions concernant les résidences étudiantes à proximité de l'université.",
+        "reponse": []
+      }
+    ]
+  },
+  {
+    "idBlock": 6,
+    "name": "Expérience académique",
+    "questions": [
+      {
+        "idQuestion": 61,
+        "question": "La difficulté à obtenir les cours désirés.",
+        "reponse": []
+      },
+      {
+        "idQuestion": 62,
+        "question": "Les cours proposés.",
+        "reponse": []
+      },
+      {
+        "idQuestion": 63,
+        "question": "Des recommandations concernant le choix des cours.",
+        "reponse": []
+      },
+      {
+        "idQuestion": 64,
+        "question": "Les connaissances linguistiques pour suivre les cours.",
+        "reponse": []
+      },
+      {
+        "idQuestion": 65,
+        "question": "Les méthodes d'enseignement/de travail des professeurs par rapport à l'ENSEEIHT.",
+        "reponse": []
+      },
+      {
+        "idQuestion": 66,
+        "question": "La charge de travail par rapport à l'ENSEEIHT.",
+        "reponse": []
+      }
+    ]
+  },
+  {
+    "idBlock": 7,
+    "name": "Activités scolaires et parascolaires",
+    "questions": [
+      {
+        "idQuestion": 71,
+        "question": "Les activités parascolaires offertes par l'université aux étudiants internationaux.",
+        "reponse": []
+      },
+      {
+        "idQuestion": 72,
+        "question": "Les activités culturelles ou touristiques pour les soirées et fins de semaines.",
+        "reponse": []
+      }
+    ]
+  },
+  {
+    "idBlock": 8,
+    "name": "Conseils pour les futurs étudiants",
+    "questions": [
+      {
+        "idQuestion": 81,
+        "question": "Des conseils pour les futurs étudiants à la mobilité.",
+        "reponse": []
+      }
+    ]
+  }
 ]

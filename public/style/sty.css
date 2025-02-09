@@ -1,0 +1,56 @@
+body {
+    min-height: 100vh;
+    background-color: #f8f9fa !important;
+  }
+  
+  .step-progress .nav-link {
+    background: #fff;
+    border: 2px solid #cc0052;
+    color: #cc0052 !important;
+  }
+  
+  .step-progress .nav-link.active {
+    background: #cc0052 !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(204, 0, 82, 0.2);
+  }
+  
+  .form-control, .form-select {
+    border: 2px solid #e7e0e0;
+    transition: all 0.3s ease;
+  }
+  
+  .form-control:focus, .form-select:focus {
+    border-color: #cc0052;
+    box-shadow: 0 0 8px rgba(204, 0, 82, 0.2);
+  }
+  
+  .btn-outline-secondary {
+    border-color: #cc0052;
+    color: #cc0052;
+  }
+  
+  .btn-outline-secondary:hover {
+    background: #cc0052;
+    color: white;
+  }
+  
+  .btn-primary {
+    background: #cc0052;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background: #b00047;
+  }
+  
+  .btn-success {
+    background: #28a745;
+    border: none;
+  }
+  
+  @media (min-width: 768px) {
+    .form-section {
+      padding: 40px !important;
+    }
+  }

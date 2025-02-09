@@ -1,235 +1,455 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="fr" ng-app="myApp">
 
 <head>
     <meta charset="UTF-8">
-    <title>Bloc Questions</title>
-    <link rel="stylesheet" href="../style/stylefor.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Formulaire Mobilité Internationale</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="sty.css">
+    <style>
+        .step-progress .nav-link {
+            min-width: 120px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .form-section {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 25px 0;
+            box-shadow: 0 2px 15px rgba(204, 0, 82, 0.1);
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: #362d32;
+            margin-bottom: 0.5rem;
+        }
+
+        .dynamic-question textarea {
+            min-height: 120px;
+        }
+
+        .btn-navigation {
+            min-width: 140px;
+            padding: 12px 25px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .step-progress .nav-link {
+                margin: 5px;
+                font-size: 0.9rem;
+                min-width: 90px;
+            }
+
+            .form-section {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 
-<body ng-controller="myCtrl">
-    <div class="testbox">
-        <form ng-submit="submitForm()">
-            <h1>Fiche ETUDIANT</h1>
-            <br><br>
-            <label for="name">Nom:</label>
-            <input type="text" id="name" ng-model="student.nom">
-            <label for="firstname"> Prénom:</label>
-            <input type="text" id="prénom" ng-model="student.prenom"> <br><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" ng-model="student.email">
-            <Label for="departement">Département:</label>
-            <select id="departement" ng-model="student.departement">
-                <option value=1>SN-L</option>
-                <option value=2>SN-B</option>
-                <option value=3>SN-M</option>
-                <option value=4>SN-T</option>
-                <option value=5>SN-R</option>
-                <option value=6>SN-A</option>
-                <option value=7>MF2E</option>
-                <option value=8>MF2E Eau et Environnement</option>
-                <option value=9>MF2E Energie</option>
-                <option value=10>3EA Electronique (s7)</option>
-                <option value=11>3EA electrique et simulation (s7)</option>
-                <option value=12>3EA energie (s7)</option>
-                <option value=13>3EA InSyst (s8)</option>
-                <option value=14>3EA SysCom (s8)</option>
-                <option value=15>3EA PN (s8)</option>
-                <option value=16>3EA IATI (s8)</option>
-                <option value=17>3EA SATR (s8)</option>
-                <option value=18>3EA SEF (s8)</option>
-                <option value=19>3EA SM (s8)</option>
-            </select>
-            <br><br>
+<body ng-controller="MainCtrl" class="bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                <form ng-submit="submitForm()" class="main-form">
+                    <!-- Barre de progression -->
+                    <ul class="nav step-progress justify-content-center mb-5">
+                        <!-- Étapes fixes -->
+                        <li class="nav-item" ng-repeat="n in [0,1,2]">
+                            <a class="nav-link rounded-pill" ng-class="{ 'active': currentStep === n }"
+                                ng-click="goToStep(n)">
+                                {{ ['Étudiant', 'Université', 'Coûts'][n] }}
+                            </a>
+                        </li>
+                        <!-- Étapes dynamiques -->
+                        <li class="nav-item" ng-repeat="bloc in dynamicBlocs">
+                            <a class="nav-link rounded-pill" ng-class="{ 'active': currentStep === $index + 3 }"
+                                ng-click="goToStep($index + 3)">
+                                {{ bloc.name }}
+                            </a>
+                        </li>
+                    </ul>
 
-            <Label for="semestre">Semestre:</label>
-            <select id="semestre" ng-model="student.semestre">
-                <option value="s7">S7</option>
-                <option value="s8">S8</option>
-                <option value="s9">S9</option>
-            </select>
-            <label for="date">Dates de la mobilité :</label>
-            <input type="date" id="date" ng-model="student.date_mobilite"> <br><br>
-            <label for="durre">Durée de la mobilité:</label>
-            <input type="text" id="duree_mobilite" ng-model="student.duree_mobilite">
+                    <!-- Étape 1: Étudiant -->
+                    <div ng-show="currentStep === 0" class="form-section">
+                        <h1 class="mb-4 text-primary">Fiche Étudiant</h1>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <label class="form-label">Nom</label>
+                                <input type="text" class="form-control" ng-model="student.nom" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Prénom</label>
+                                <input type="text" class="form-control" ng-model="student.prenom" required>
+                            </div>
 
-            <br><br><br><br>
-            <h1>Fiche UNIVERSITE</h1>
-            <br><br>
-            <label for="pays">Pays destination</label>
-            <select id="pays" ng-model="univ.selectedPays" ng-options="country.country as country.country for country in universitiesByCountry"
-                ng-change="updateSelectedPays()">
-                <option value=""></option>
-            </select>
-            
+                            <div class="col-md-6">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" ng-model="student.email" required>
+                            </div>
 
-            <label>Ville : </label>
-            <input type="text" id="ville" ng-model="univ.ville"  name="ville">
-            <br><br>
+                            <div class="col-md-6">
+                                <label class="form-label">Département</label>
+                                <select class="form-select" ng-model="student.departement" required>
+                                    <option value="SN-L">SN-L</option>
+                                    <option value="SN-B">SN-B</option>
+                                    <option value="SN-M">SN-M</option>
+                                    <option value="SN-T">SN-T</option>
+                                    <option value="SN-R">SN-R</option>
+                                    <option value="SN-A">SN-A</option>
+                                    <option value="MF2E">MF2E</option>
+                                    <option value="MF2E Eau et Environnement">MF2E Eau et Environnement</option>
+                                    <option value="MF2E Energie">MF2E Energie</option>
+                                    <option value="3EA Electronique (s7)">3EA Electronique (s7)</option>
+                                    <option value="3EA electrique et simulation (s7)">3EA electrique et simulation (s7)
+                                    </option>
+                                    <option value="3EA energie (s7)">3EA energie (s7)</option>
+                                    <option value="3EA InSyst (s8)">3EA InSyst (s8)</option>
+                                    <option value="3EA SysCom (s8)">3EA SysCom (s8)</option>
+                                    <option value="3EA PN (s8)">3EA PN (s8)</option>
+                                    <option value="3EA IATI (s8)">3EA IATI (s8)</option>
+                                    <option value="3EA SATR (s8)">3EA SATR (s8)</option>
+                                    <option value="3EA SEF (s8)">3EA SEF (s8)</option>
+                                    <option value="3EA SM (s8)">3EA SM (s8)</option>
+                                </select>
+                            </div>
 
-            <label for="university">University :</label>
-            <select id="university" ng-model="univ.selectedEcole" ng-options="university.university for university in ecolesList">
-                <option value=""></option>
-            </select>
+                            <div class="col-md-6">
+                                <label class="form-label">Semestre</label>
+                                <select class="form-select" ng-model="student.semestre" required>
+                                    <option value="s7">S7</option>
+                                    <option value="s8">S8</option>
+                                    <option value="s9">S9</option>
+                                </select>
+                            </div>
 
-            <label>Type de séjour : </label>
-            <select id="type" name="type_sejour" ng-model ="univ.typeSej">
-                <option value="Echange avec acquisition de crédits">Echange avec acquisition de crédits</option>
-                <option value="Double diplome">Double diplome</option>
-            </select>
-            <br><br>
-            <label>Cadre : </label>
-            <select id="cadre" name="cadre" ng-model ="univ.cadre">
-                <option value="erasmus">Erasmus</option>
-                <option value="Free Mover">Free Mover</option>
-                <option value="accords Fitec">accords Fitec</option>
-                <option value="master">Master</option>
-            </select>
+                            <div class="col-md-6">
+                                <label class="form-label">Date de mobilité</label>
+                                <input type="date" class="form-control" ng-model="student.date_mobilite" required>
+                            </div>
 
-            <label>Possibilité de stage rémunéré : </label>
-            <select id="stage" name="stage_remunere" ng-model ="univ.stage">
-                <option value="oui">Oui</option>
-                <option value="non">Non</option>
-            </select>
-            <br><br>
-            <label for="langue">Langue d'enseignement : </label>
-            <select id="langue" name="langue_enseignement"  ng-model ="univ.langue">
-                <option value="anglais">Anglais</option>
-                <option value="français">Français</option>
-                <option value="Langue du pays d'acceuil">Langue du pays d'acceuil</option>
-            </select>
-            <label>Résidences Universitaires : </label>
-            <select id="residence" name="residence_universitaire" ng-model ="univ.residence">
-                <option value="oui">Oui</option>
-                <option value="non">Non</option>
-            </select>
-            <br><br>
-            <label>
-                Dates approximatives des épreuves normales et de rattrapage : </label>
-            <input type="text" id="date_normale_rattrapage" name="date_normale_rattrapage" ng-model ="univ.dateRatt">
-            <label>moyenne requise pour 1 ou 2 session : </label>
-            <input type="text" id="moyenne" name="moyenne">
-            <br><br>
-            <label for="message">Quelles sont les exigences linguistiques (le niveau de langue requis pour les
-                cours...)?</label><br>
-            <textarea type="message" name="exigence_linguistique" ng-model ="univ.langueEx" rows="3" cols="50"></textarea><br><br>
-            <br><br>
+                            <div class="col-12">
+                                <label class="form-label">Durée de mobilité</label>
+                                <input type="text" class="form-control" ng-model="student.duree_mobilite" required>
+                            </div>
+                        </div>
+                    </div>
 
-            
-    <h1>Coût de la vie</h1>
-    <br><br>
-    <label for="message">Logement</label>
-    <input type="number" id="logement" name="logement">
-    <label for="message">Nourriture</label>
-    <input type="number" id="nourriture" name="nourriture">
-    <label for="message">Transport</label>
-    <input type="number" id="transport" name="transport"> <br><br>
-    <label for="message">Frais à l'université d'acceuil</label> 
-    <input type="number" id="frais" name="frais_scolarite">
-    <label for="message">mutuelle</label>
-    <input type="number" id="assurance" name="assurance">
-    <label for="message">Autres</label>
-    <input type="number" id="autres" name="autres"><br><br>
-    <br><br>
+                    <!-- Étape 2: Université -->
+                    <div ng-show="currentStep === 1" class="form-section">
+                        <h1 class="mb-4 text-primary">Fiche Université</h1>
+                        <div class="row g-4">
+                            <!-- Pays et Ville -->
+                            <div class="col-md-6">
+                                <label class="form-label">Pays destination</label>
+                                <select class="form-select" id="pays" ng-model="univ.selectedPays"
+                                    ng-options="country.country as country.country for country in universitiesByCountry"
+                                    ng-change="updateSelectedPays()" required>
+                                    <option value="">Choisir un pays</option>
+                                </select>
+                            </div>
 
-            
-            <div ng-repeat="bloc in blocs track by $index">
-                <h1>{{ bloc.name }}</h1><br><br>
+                            <div class="col-md-6">
+                                <label class="form-label">Ville</label>
+                                <input type="text" class="form-control" id="ville" ng-model="fiche.ville" required>
+                            </div>
 
-                <div ng-repeat="question in bloc.questions">
-                    <label for="message">{{ question.question }}</label><br><br>
-                    <textarea ng-model="question.response" rows="3" cols="50"></textarea><br><br>
-                </div>
+                            <!-- Université et Type de séjour -->
+                            <div class="col-md-6">
+                                <label class="form-label">Université</label>
+                                <select class="form-select" id="university" ng-model="univ.selectedEcole"
+                                    ng-options="university.university for university in ecolesList" required>
+                                    <option value="">Sélectionner une université</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Type de séjour</label>
+                                <select class="form-select" id="type" ng-model="univ.typeSej" required>
+                                    <option value="Echange avec acquisition de crédits">Echange avec acquisition de
+                                        crédits</option>
+                                    <option value="Double diplome">Double diplôme</option>
+                                </select>
+                            </div>
+
+                            <!-- Cadre et Stage -->
+                            <div class="col-md-6">
+                                <label class="form-label">Cadre</label>
+                                <select class="form-select" id="cadre" ng-model="fiche.cadre" required>
+                                    <option value="erasmus">Erasmus</option>
+                                    <option value="Free Mover">Free Mover</option>
+                                    <option value="accords Fitec">Accords Fitec</option>
+                                    <option value="master">Master</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Stage rémunéré</label>
+                                <select class="form-select" id="stage" ng-model="univ.stage" required>
+                                    <option value="oui">Oui</option>
+                                    <option value="non">Non</option>
+                                </select>
+                            </div>
+
+                            <!-- Langues et Résidences -->
+                            <div class="col-md-6">
+                                <label class="form-label">Langue d'enseignement</label>
+                                <select class="form-select" id="langue" ng-model="fiche.langue" required>
+                                    <option value="anglais">Anglais</option>
+                                    <option value="français">Français</option>
+                                    <option value="Langue du pays d'acceuil">Langue du pays d'accueil</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Résidences universitaires</label>
+                                <select class="form-select" id="residence" ng-model="fiche.residence" required>
+                                    <option value="oui">Disponibles</option>
+                                    <option value="non">Non disponibles</option>
+                                </select>
+                            </div>
+
+                            <!-- Dates et Moyennes -->
+                            <div class="col-md-6">
+                                <label class="form-label">Dates des épreuves</label>
+                                <input type="text" class="form-control" id="date_normale_rattrapage"
+                                    ng-model="fiche.dateRatt" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Moyenne requise</label>
+                                <input type="text" class="form-control" id="moyenne" ng-model="fiche.moyenne" required>
+                            </div>
+
+                            <!-- Exigences linguistiques -->
+                            <div class="col-12">
+                                <label class="form-label">Exigences linguistiques</label>
+                                <textarea class="form-control" rows="4" ng-model="fiche.langueEx" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Étape 3: Coûts -->
+                    <div ng-show="currentStep === 2" class="form-section">
+                        <h1 class="mb-4 text-primary">Coût de la vie</h1>
+                        <div class="row g-4">
+                            <!-- Première ligne -->
+                            <div class="col-md-4">
+                                <label class="form-label">Logement (€)</label>
+                                <input type="number" class="form-control" id="logement" ng-model="costs.logement"
+                                    required>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label">Nourriture (€)</label>
+                                <input type="number" class="form-control" id="nourriture" ng-model="costs.nourriture"
+                                    required>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label">Transport (€)</label>
+                                <input type="number" class="form-control" id="transport" ng-model="costs.transport"
+                                    required>
+                            </div>
+
+                            <!-- Deuxième ligne -->
+                            <div class="col-md-4">
+                                <label class="form-label">Frais université (€)</label>
+                                <input type="number" class="form-control" id="frais" ng-model="costs.frais_scolarite"
+                                    required>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label">Mutuelle (€)</label>
+                                <input type="number" class="form-control" id="assurance" ng-model="costs.assurance"
+                                    required>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label">Autres dépenses (€)</label>
+                                <input type="number" class="form-control" id="autres" ng-model="costs.autres" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Étapes dynamiques -->
+                    <div ng-repeat="bloc in dynamicBlocs" ng-show="currentStep === $index + 3" class="form-section">
+                        <h1 class="mb-4 text-primary">{{ bloc.name }}</h1>
+                        <div class="row g-4">
+                            <div class="col-12 dynamic-question" ng-repeat="question in bloc.questions">
+                                <label class="form-label">{{ question.question }}</label>
+                                <textarea class="form-control" ng-model="question.response" rows="4"
+                                    required></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation -->
+                    <div class="d-flex justify-content-between mt-5">
+                        <button type="button" class="btn btn-outline-secondary btn-navigation" ng-click="previous()"
+                            ng-disabled="currentStep === 0">
+                            ← Précédent
+                        </button>
+
+                        <button type="button" class="btn btn-primary btn-navigation" ng-click="next()"
+                            ng-hide="currentStep === totalSteps - 1">
+                            Suivant →
+                        </button>
+
+                        <button type="submit" class="btn btn-success btn-navigation"
+                            ng-show="currentStep === totalSteps - 1">
+                            Soumettre
+                        </button>
+                    </div>
+                </form>
             </div>
-
-            <div class="btn-block">
-                <button type="submit">Submit</button>
-            </div>
-        </form>
+        </div>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        var app = angular.module('myApp', []);
-        app.controller('myCtrl', function ($scope, $http) {
-            $scope.student = {};
+        angular.module('myApp', [])
+            .controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
+                // Configuration initiale
+                $scope.currentStep = 0;
+                $scope.totalSteps = 3;
+                $scope.student = {};
+                $scope.univ = {};
+                $scope.fiche = {};
+                $scope.costs = {};
+                $scope.dynamicBlocs = [];
 
-            $scope.universitiesByCountry = [];  
-            $scope.ecolesList = [];
-           
+                $scope.block ={};
 
-            $scope.blocs = [];
-
-            $http.get('/informationEcole.json')
-                .then(function (response) {
-                    $scope.universitiesByCountry = response.data;
-                    //console.log($scope.universitiesByCountry);
-                }, function (error) {
-                    console.error('Error fetching data:', error);
-                });
-
-            $http.get('/blocs.json')
-                .then(function (response) {
-                    $scope.blocs = response.data.slice(1);
-                    console.log(response.data);
-                }, function (error) {
-                    console.error('Error fetching data:', error);
-                });
+                $scope.universitiesByCountry = [];
+                $scope.ecolesList = [];
 
 
-            //$scope.blocs =[] ;
-
-            // Récupérer les données depuis la servlet Java
-            $http.get('/appPrincipale/formulaire')
-                .then(function (response) {
-                    $scope.blocs = response.data.slice(1);
-                    console.log($scope.blocs);
-                }, function (error) {
-                    console.error('Error fetching data:', error);
-                });
-
-            $scope.updateSelectedPays = function () {
-                console.log("Pays sélectionné :", $scope.univ.selectedPays);
-                var selectedCountry = $scope.univ.selectedPays;
-                var countryObj = $scope.universitiesByCountry.find(function (country) {
-                    return country.country === selectedCountry;
-                });
-
-                console.log("Pays sélectionné2 :", countryObj);
-
-                // Si un pays correspondant est trouvé, met à jour la liste des universités
-                if (countryObj) {
-                    $scope.ecolesList = countryObj.universities;
-                    console.log("Pays sélectionné3 :", $scope.ecolesList);
-                } else {
-                    $scope.ecolesList = []; // Si aucun pays correspondant n'est trouvé, efface la liste des universités
-                }
-
-            };
-
-
-
-            $scope.submitForm = function () {
-                var formData = {
-                    student: $scope.student,
-                    blocs: $scope.blocs,
-                    university: $scope.univ
-                };
-                console.log(formData)
-
-                $http.post('/submit', formData)
+                $http.get('/informationEcole.json')
                     .then(function (response) {
-                        alert('Data saved successfully');
-                        $scope.student = {};
-                        $scope.blocs.forEach(function (bloc) {
-                            bloc.questions.forEach(function (question) {
-                                question.response = '';
-                            });
-                        });
+                        $scope.universitiesByCountry = response.data;
+                        //console.log($scope.universitiesByCountry);
                     }, function (error) {
-                        alert('Error saving data');
+                        console.error('Error fetching data:', error);
                     });
-            };
-        });
+
+
+                $scope.updateSelectedPays = function () {
+                    console.log("Pays sélectionné :", $scope.univ.selectedPays);
+                    var selectedCountry = $scope.univ.selectedPays;
+                    var countryObj = $scope.universitiesByCountry.find(function (country) {
+                        return country.country === selectedCountry;
+                    });
+
+                    console.log("Pays sélectionné2 :", countryObj);
+
+                    // Si un pays correspondant est trouvé, met à jour la liste des universités
+                    if (countryObj) {
+                        $scope.ecolesList = countryObj.universities;
+                        console.log("Pays sélectionné3 :", $scope.ecolesList);
+                    } else {
+                        $scope.ecolesList = []; // Si aucun pays correspondant n'est trouvé, efface la liste des universités
+                    }
+
+                };
+
+                // Chargement des blocs dynamiques
+                $http.get('blocs.json').then(function (response) {
+                    $scope.block = response.data[0];
+                    $scope.dynamicBlocs = response.data.slice(1);
+                    $scope.totalSteps += $scope.dynamicBlocs.length;
+                });
+
+                // Gestion navigation
+                $scope.next = function () {
+                    if ( $scope.currentStep < $scope.totalSteps - 1) {
+                        $scope.currentStep++;
+                    }
+                };
+
+                $scope.previous = function () {
+                    if ($scope.currentStep > 0) $scope.currentStep--;
+                };
+
+                $scope.goToStep = function (step) {
+                    if (step <= $scope.currentStep || $scope.validateStep()) {
+                        $scope.currentStep = step;
+                    }
+                };
+
+                // Validation des étapes
+                $scope.validateStep = function () {
+                    switch ($scope.currentStep) {
+                        case 0:
+                            return !!$scope.student.nom && !!$scope.student.prenom && !!$scope.student.email;
+                        case 1:
+                            return !!$scope.univ.selectedPays && !!$scope.univ.ville;
+                        case 2:
+                            return !!$scope.costs.logement;
+                        default:
+                            const blocIndex = $scope.currentStep - 3;
+                            return $scope.dynamicBlocs[blocIndex].questions.every(q => q.response?.trim());
+                    }
+                };
+
+                // Soumission finale
+               /* $scope.submitForm = function () {
+                    const formData = {
+                        student: $scope.student,
+                        university: $scope.univ,
+                        costs: $scope.costs,
+                        dynamicBlocs: $scope.dynamicBlocs
+                    };
+
+                    console.log('Formulaire soumis:', formData);
+
+                    $http.post('/api/submit', formData)
+                        .then(function () {
+                            alert('Formulaire soumis avec succès !');
+                            window.location.reload();
+                        })
+                        .catch(function (error) {
+                            alert('Erreur de soumission: ' + error.data.message);
+                        });
+                };*/
+
+                $scope.submitForm = function() {
+                    // Préparation des réponses formatées
+                    const formattedBlocs = $scope.dynamicBlocs.map(bloc => ({
+                        idBlock: bloc.idBlock,
+                        name: bloc.name,
+                        questions: bloc.questions.map(question => ({
+                            idQuestion: question.idQuestion,
+                            reponse: question.response // Envoyer la réponse sous forme de chaîne
+                        }))
+                    }));
+
+
+                    const formData = {
+                        student: $scope.student,
+                        university: $scope.univ,
+                        costs: $scope.costs,
+                        blocs: formattedBlocs,
+                        fiche: $scope.fiche
+                    };
+
+                    console.log('Formulaire soumis:', formData);
+                
+                    $http.post('/api/submit', formData)
+                        .then(function() {
+                            alert('Formulaire soumis avec succès !');
+                            window.location.reload();
+                        })
+                        .catch(function(error) {
+                            alert('Erreur de soumission: ' + error.data.message);
+                        });
+                };
+            }]);
     </script>
 </body>
 
