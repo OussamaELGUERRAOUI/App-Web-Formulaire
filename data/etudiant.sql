@@ -6,6 +6,6 @@ CREATE TABLE etudiant (
     semestre VARCHAR(50),
     departement VARCHAR(50),
     date_mobilite DATE,
-    duree_mobilite INT,
+    duree_mobilite VARCHAR(50),
     id_universite INT
 );

@@ -53,22 +53,37 @@
 
 <body ng-controller="MainCtrl" class="bg-light">
     <div class="container py-5">
-        <div class="row justify-content-center">
+        <div ng-show="showError" class="alert alert-danger alert-dismissible fade show" role="alert">
+            ❌ Veuillez remplir tous les champs !
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <div ng-show="showErrorMail" class="alert alert-danger alert-dismissible fade show" role="alert">
+            ❌ Veuillez entrer un email valide.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <div ng-show="submissionSuccess" class="thank-you-page">
+            <div>
+                <h1 class="display-3 text-success mb-4">✅</h1>
+                <h1 class="display-4 text-success mb-3">Merci pour votre participation !</h1>
+                <p class="lead text-muted">Votre formulaire a été soumis avec succès.</p>
+            </div>
+        </div>
+        <div ng-show = "ssubmissionSuccessnon" class="row justify-content-center">
             <div class="col-xl-10">
                 <form ng-submit="submitForm()" class="main-form">
                     <!-- Barre de progression -->
                     <ul class="nav step-progress justify-content-center mb-5">
                         <!-- Étapes fixes -->
-                        <li class="nav-item" ng-repeat="n in [0,1,2]">
+                        <li class="nav-item" ng-repeat="n in [0,1]">
                             <a class="nav-link rounded-pill" ng-class="{ 'active': currentStep === n }"
                                 ng-click="goToStep(n)">
-                                {{ ['Étudiant', 'Université', 'Coûts'][n] }}
+                                {{ ['Étudiant', 'Université'][n] }}
                             </a>
                         </li>
                         <!-- Étapes dynamiques -->
                         <li class="nav-item" ng-repeat="bloc in dynamicBlocs">
-                            <a class="nav-link rounded-pill" ng-class="{ 'active': currentStep === $index + 3 }"
-                                ng-click="goToStep($index + 3)">
+                            <a class="nav-link rounded-pill" ng-class="{ 'active': currentStep === $index + 2 }"
+                                ng-click="goToStep($index + 2)">
                                 {{ bloc.name }}
                             </a>
                         </li>
@@ -80,21 +95,21 @@
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <label class="form-label">Nom</label>
-                                <input type="text" class="form-control" ng-model="student.nom" required>
+                                <input type="text" class="form-control" ng-model="student.nom" >
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">Prénom</label>
-                                <input type="text" class="form-control" ng-model="student.prenom" required>
+                                <input type="text" class="form-control" ng-model="student.prenom" >
                             </div>
 
                             <div class="col-md-6">
                                 <label class="form-label">Email</label>
-                                <input type="email" class="form-control" ng-model="student.email" required>
+                                <input type="text" class="form-control" ng-model="student.email">
                             </div>
 
                             <div class="col-md-6">
                                 <label class="form-label">Département</label>
-                                <select class="form-select" ng-model="student.departement" required>
+                                <select class="form-select" ng-model="student.departement" >
                                     <option value="SN-L">SN-L</option>
                                     <option value="SN-B">SN-B</option>
                                     <option value="SN-M">SN-M</option>
@@ -120,7 +135,7 @@
 
                             <div class="col-md-6">
                                 <label class="form-label">Semestre</label>
-                                <select class="form-select" ng-model="student.semestre" required>
+                                <select class="form-select" ng-model="student.semestre" >
                                     <option value="s7">S7</option>
                                     <option value="s8">S8</option>
                                     <option value="s9">S9</option>
@@ -129,12 +144,12 @@
 
                             <div class="col-md-6">
                                 <label class="form-label">Date de mobilité</label>
-                                <input type="date" class="form-control" ng-model="student.date_mobilite" required>
+                                <input type="date" class="form-control" ng-model="student.date_mobilite" >
                             </div>
 
                             <div class="col-12">
                                 <label class="form-label">Durée de mobilité</label>
-                                <input type="text" class="form-control" ng-model="student.duree_mobilite" required>
+                                <input type="text" class="form-control" ng-model="student.duree_mobilite" >
                             </div>
                         </div>
                     </div>
@@ -148,28 +163,28 @@
                                 <label class="form-label">Pays destination</label>
                                 <select class="form-select" id="pays" ng-model="univ.selectedPays"
                                     ng-options="country.country as country.country for country in universitiesByCountry"
-                                    ng-change="updateSelectedPays()" required>
+                                    ng-change="updateSelectedPays()" >
                                     <option value="">Choisir un pays</option>
                                 </select>
                             </div>
 
                             <div class="col-md-6">
                                 <label class="form-label">Ville</label>
-                                <input type="text" class="form-control" id="ville" ng-model="fiche.ville" required>
+                                <input type="text" class="form-control" id="ville" ng-model="fiche.ville" >
                             </div>
 
                             <!-- Université et Type de séjour -->
                             <div class="col-md-6">
                                 <label class="form-label">Université</label>
                                 <select class="form-select" id="university" ng-model="univ.selectedEcole"
-                                    ng-options="university.university for university in ecolesList" required>
+                                    ng-options="university.university for university in ecolesList" >
                                     <option value="">Sélectionner une université</option>
                                 </select>
                             </div>
 
                             <div class="col-md-6">
                                 <label class="form-label">Type de séjour</label>
-                                <select class="form-select" id="type" ng-model="univ.typeSej" required>
+                                <select class="form-select" id="type" ng-model="univ.typeSej">
                                     <option value="Echange avec acquisition de crédits">Echange avec acquisition de
                                         crédits</option>
                                     <option value="Double diplome">Double diplôme</option>
@@ -179,7 +194,7 @@
                             <!-- Cadre et Stage -->
                             <div class="col-md-6">
                                 <label class="form-label">Cadre</label>
-                                <select class="form-select" id="cadre" ng-model="fiche.cadre" required>
+                                <select class="form-select" id="cadre" ng-model="fiche.cadre" >
                                     <option value="erasmus">Erasmus</option>
                                     <option value="Free Mover">Free Mover</option>
                                     <option value="accords Fitec">Accords Fitec</option>
@@ -189,7 +204,7 @@
 
                             <div class="col-md-6">
                                 <label class="form-label">Stage rémunéré</label>
-                                <select class="form-select" id="stage" ng-model="univ.stage" required>
+                                <select class="form-select" id="stage" ng-model="univ.stage" >
                                     <option value="oui">Oui</option>
                                     <option value="non">Non</option>
                                 </select>
@@ -198,7 +213,7 @@
                             <!-- Langues et Résidences -->
                             <div class="col-md-6">
                                 <label class="form-label">Langue d'enseignement</label>
-                                <select class="form-select" id="langue" ng-model="fiche.langue" required>
+                                <select class="form-select" id="langue" ng-model="fiche.langue" >
                                     <option value="anglais">Anglais</option>
                                     <option value="français">Français</option>
                                     <option value="Langue du pays d'acceuil">Langue du pays d'accueil</option>
@@ -207,7 +222,7 @@
 
                             <div class="col-md-6">
                                 <label class="form-label">Résidences universitaires</label>
-                                <select class="form-select" id="residence" ng-model="fiche.residence" required>
+                                <select class="form-select" id="residence" ng-model="fiche.residence" >
                                     <option value="oui">Disponibles</option>
                                     <option value="non">Non disponibles</option>
                                 </select>
@@ -217,73 +232,32 @@
                             <div class="col-md-6">
                                 <label class="form-label">Dates des épreuves</label>
                                 <input type="text" class="form-control" id="date_normale_rattrapage"
-                                    ng-model="fiche.dateRatt" required>
+                                    ng-model="fiche.dateRatt" >
                             </div>
 
                             <div class="col-md-6">
                                 <label class="form-label">Moyenne requise</label>
-                                <input type="text" class="form-control" id="moyenne" ng-model="fiche.moyenne" required>
+                                <input type="text" class="form-control" id="moyenne" ng-model="fiche.moyenne" >
                             </div>
 
                             <!-- Exigences linguistiques -->
                             <div class="col-12">
                                 <label class="form-label">Exigences linguistiques</label>
-                                <textarea class="form-control" rows="4" ng-model="fiche.langueEx" required></textarea>
+                                <textarea class="form-control" rows="4" ng-model="fiche.langueEx" ></textarea>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Étape 3: Coûts -->
-                    <div ng-show="currentStep === 2" class="form-section">
-                        <h1 class="mb-4 text-primary">Coût de la vie</h1>
-                        <div class="row g-4">
-                            <!-- Première ligne -->
-                            <div class="col-md-4">
-                                <label class="form-label">Logement (€)</label>
-                                <input type="number" class="form-control" id="logement" ng-model="costs.logement"
-                                    required>
-                            </div>
-
-                            <div class="col-md-4">
-                                <label class="form-label">Nourriture (€)</label>
-                                <input type="number" class="form-control" id="nourriture" ng-model="costs.nourriture"
-                                    required>
-                            </div>
-
-                            <div class="col-md-4">
-                                <label class="form-label">Transport (€)</label>
-                                <input type="number" class="form-control" id="transport" ng-model="costs.transport"
-                                    required>
-                            </div>
-
-                            <!-- Deuxième ligne -->
-                            <div class="col-md-4">
-                                <label class="form-label">Frais université (€)</label>
-                                <input type="number" class="form-control" id="frais" ng-model="costs.frais_scolarite"
-                                    required>
-                            </div>
-
-                            <div class="col-md-4">
-                                <label class="form-label">Mutuelle (€)</label>
-                                <input type="number" class="form-control" id="assurance" ng-model="costs.assurance"
-                                    required>
-                            </div>
-
-                            <div class="col-md-4">
-                                <label class="form-label">Autres dépenses (€)</label>
-                                <input type="number" class="form-control" id="autres" ng-model="costs.autres" required>
-                            </div>
-                        </div>
-                    </div>
+                   
 
                     <!-- Étapes dynamiques -->
-                    <div ng-repeat="bloc in dynamicBlocs" ng-show="currentStep === $index + 3" class="form-section">
+                    <div ng-repeat="bloc in dynamicBlocs" ng-show="currentStep === $index + 2" class="form-section">
                         <h1 class="mb-4 text-primary">{{ bloc.name }}</h1>
                         <div class="row g-4">
                             <div class="col-12 dynamic-question" ng-repeat="question in bloc.questions">
                                 <label class="form-label">{{ question.question }}</label>
                                 <textarea class="form-control" ng-model="question.response" rows="4"
-                                    required></textarea>
+                                    ></textarea>
                             </div>
                         </div>
                     </div>
@@ -317,7 +291,7 @@
             .controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
                 // Configuration initiale
                 $scope.currentStep = 0;
-                $scope.totalSteps = 3;
+                $scope.totalSteps = 2;
                 $scope.student = {};
                 $scope.univ = {};
                 $scope.fiche = {};
@@ -325,6 +299,15 @@
                 $scope.dynamicBlocs = [];
 
                 $scope.block ={};
+                $scope.errorMessage = "";
+                $scope.showThankYou = false;
+                $scope.showError = false;
+                $scope.submissionSuccess = false;
+                $scope.ssubmissionSuccessnon = true;
+                $scope.showErrorMail = false;
+
+                
+
 
                 $scope.universitiesByCountry = [];
                 $scope.ecolesList = [];
@@ -418,7 +401,45 @@
                         });
                 };*/
 
+                $scope.validateForm = function () {
+                    if (!($scope.student.nom && $scope.student.prenom && $scope.student.email && 
+                          $scope.student.departement && $scope.student.semestre && 
+                          $scope.student.date_mobilite && $scope.student.duree_mobilite)) return false;
+
+                    // Validation université
+                    if (!($scope.univ.selectedPays && $scope.fiche.ville && $scope.univ.selectedEcole && 
+                          $scope.univ.typeSej && $scope.fiche.cadre && $scope.univ.stage && 
+                          $scope.fiche.langue && $scope.fiche.residence && 
+                          $scope.fiche.dateRatt && $scope.fiche.moyenne && $scope.fiche.langueEx)) return false;
+
+                    
+                    
+                    
+
+                    
+
+                    // Validation blocs dynamiques
+                    return $scope.dynamicBlocs.every(bloc => 
+                        bloc.questions.every(q => q.response?.trim())
+                    );
+                };
+    
+
                 $scope.submitForm = function() {
+                    $scope.submitForm = function () {
+                        if (!$scope.validateForm()) {
+                          
+                            console.log("Erreur de validation");
+                            $scope.showError = true;
+                            window.scrollTo(0, 0);
+                            
+                            
+                            return;
+                        }
+        
+
+
+                    
                     // Préparation des réponses formatées
                     const formattedBlocs = $scope.dynamicBlocs.map(bloc => ({
                         idBlock: bloc.idBlock,
@@ -428,6 +449,11 @@
                             reponse: question.response // Envoyer la réponse sous forme de chaîne
                         }))
                     }));
+
+                    $scope.showThankYouPage = function () {
+                        document.body.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;font-size:2em;font-weight:bold;">Merci pour votre participation</div>';
+                    };
+
 
 
                     const formData = {
@@ -442,13 +468,16 @@
                 
                     $http.post('/api/submit', formData)
                         .then(function() {
-                            alert('Formulaire soumis avec succès !');
-                            window.location.reload();
+                            console.log('Formulaire soumis:', formData);
                         })
                         .catch(function(error) {
                             alert('Erreur de soumission: ' + error.data.message);
                         });
+                            $scope.submissionSuccess = true;
+                            console.log('soumis:', $scope.submissionSuccess);
+                            $scope.ssubmissionSuccessnon = false;
                 };
+            }
             }]);
     </script>
 </body>

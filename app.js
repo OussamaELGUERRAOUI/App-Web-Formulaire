@@ -22,11 +22,11 @@ let informationEcole = require('./data/informationEcole.json');
 
 // connexion au base de donnée
 const db = mysql.createConnection({
-    host: 'sql307.infinityfree.com', // Changez cela selon votre configuration
-    user: 'if0_38280443',      // Changez avec votre utilisateur MySQL
-    password: 'Elguouss2001',      // Ajoutez votre mot de passe MySQL
-    database: 'if0_38280443_questionnaire', // Assurez-vous d'avoir créé cette base de données
-    port : 3306
+    host: 'localhost', // Changez cela selon votre configuration
+    user: 'root',      // Changez avec votre utilisateur MySQL
+    password: 'root',      // Ajoutez votre mot de passe MySQL
+    database: 'questionnaire', // Assurez-vous d'avoir créé cette base de données
+    port : 8001
 });
 
 db.connect(err => {
@@ -34,16 +34,7 @@ db.connect(err => {
         console.error('Erreur de connexion à la base de données:', err); 
     } else {
         console.log('Connecté à la base de données MySQL');
-        const result= getReponse(6, 9);
-        console.log(result);
-        if (Array.isArray(result)) {
-            const reponses = result.map(row => row.reponse);
-            console.log(reponses); // ['10', '20']
-          } else {
-            console.error("Le résultat n'est pas un tableau.");
-            console.log(result);
-          }
-
+        
     }
 });
 
